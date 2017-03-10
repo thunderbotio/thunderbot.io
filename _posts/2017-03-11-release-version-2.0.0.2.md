@@ -2,7 +2,7 @@
 author: samuraitruong
 layout: post
 title: "Release [2.0.0.2]"
-date: 2017-03-11 12:25
+date: 2017-03-11 12:32
 comments: true
 category: Releases
 tags:
