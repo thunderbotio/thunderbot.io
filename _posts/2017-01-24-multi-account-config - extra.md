@@ -9,7 +9,7 @@ tags:
 - Auth, Multi Account
 ---
 
-Easy instructions to set Necrobot to run multiple accounts one after each other
+Easy instructions to set Thunderbot to run multiple accounts one after each other
 
 1. In auth.json, set login credentials to your 1st account
 

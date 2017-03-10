@@ -17,6 +17,6 @@ tags:
 - item 3
 
 #Download
-* [http://link1](Necrobot.cli.zip)
-* [http://link1](Necrobot.cli.zip)
-* [http://link1](Necrobot.cli.zip)
+* [http://link1](Thunderbot.cli.zip)
+* [http://link1](Thunderbot.cli.zip)
+* [http://link1](Thunderbot.cli.zip)

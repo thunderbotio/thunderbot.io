@@ -1,7 +1,7 @@
 ---
 author: samuraitruong
 layout: post
-title: "Necrobot2 GUI release"
+title: "Thunderbot2 GUI release"
 date: 2017-01-11 0:30
 comments: true
 category: Announcement
@@ -9,7 +9,7 @@ tags:
 - GUI
 ---
 
-Necrobot is supporting by web GUI but since the limit of Web GUI block by some operation system and difficult to use  for some people. We now happy to have official release windows GUI which not require socket connection to use. 
+Thunderbot is supporting by web GUI but since the limit of Web GUI block by some operation system and difficult to use  for some people. We now happy to have official release windows GUI which not require socket connection to use. 
 
 With the initial release, It was supposed that a beta release for GUI. and many feature still Work in progress and has many issue. We has few initial feature is working
 

@@ -1,7 +1,7 @@
 ---
 author: samuraitruong
 layout: post
-title: "Necrobot2 supported API version"
+title: "Thunderbot2 supported API version"
 date: 2017-01-07 10:30
 comments: true
 category: auth.json
@@ -12,7 +12,7 @@ tags:
 Since 0.49 API forced to update, PogoDev and RE won't release public API any more, It mean that we won't have a latest API to run bot, However, Pogodev & Pokefamer came with paid solution to access their service which using lastest api version to hashing data before send back to Niantic.
 
 *What API available in thunderbot
-Necrobot allow you choose Legacy API 0.45 or Using PF hash server, the only thing you need do do is update APIconfig section in auth.json as below
+Thunderbot allow you choose Legacy API 0.45 or Using PF hash server, the only thing you need do do is update APIconfig section in auth.json as below
 
 {% highlight json%}  
 
@@ -34,7 +34,7 @@ Quick anwser is no, because old API easy to be tracked by Niantic and flag your 
 
 # Where I can buy Hash API
 
-Necrobot doesn't provide service for API key, you have to buy it from Pokefamer, please read below
+Thunderbot doesn't provide service for API key, you have to buy it from Pokefamer, please read below
 [API Hashing Service by PokeFarmer](https://talk.pogodev.org/d/51-api-hashing-service-by-pokefarmer,"API Hashing Service by PokeFarmer")
 Sometime you will get the key by email very fast after checkout, however, most case will require few hours before you get email from them.
 

@@ -9,7 +9,7 @@ tags:
 - notification
 ---
 
-Necrobot2 support notificaiton in some when there important event happen and required your attention, just as captcha not been resolved, account limit reached, account banned....
+Thunderbot2 support notificaiton in some when there important event happen and required your attention, just as captcha not been resolved, account limit reached, account banned....
 
 
 Please change below config in config.json to get Notificaiton work with your bot

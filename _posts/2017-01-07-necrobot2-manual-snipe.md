@@ -1,7 +1,7 @@
 ---
 author: samuraitruong
 layout: post
-title: "Necrobot2 - Manual Snipe config"
+title: "Thunderbot2 - Manual Snipe config"
 date: 2017-01-07 10:30
 comments: true
 category: Config.json
@@ -9,7 +9,7 @@ tags:
 - snipe, manual, socketdata
 ---
 
-Necrobot version > 1.0.0.30 support manual snipe , which is suite for everyone who don't want to setup auto snipe.
+Thunderbot version > 1.0.0.30 support manual snipe , which is suite for everyone who don't want to setup auto snipe.
 
 # How manual snipe work
 

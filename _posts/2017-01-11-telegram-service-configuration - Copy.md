@@ -24,7 +24,7 @@ The token is a string along the lines of 110201543:AAHdqTcvCH1vGWJxfSeofSAs0K5PA
 
 Read more about telegram at - [https://core.telegram.org/bots](https://core.telegram.org/bots)
 
-#Setup Necrobot work with telegram
+#Setup Thunderbot work with telegram
 
 Pretty simple because there only few paramter you need to setup, please look for config below in config.json
 
@@ -45,7 +45,7 @@ After you make that config change, you need to restart BOT, if you see the messa
 
 You need access telegram from web or from your phone, after your NECROBOT start, type anything if he reply with the menu includes all options you have then the NecroBOT and Telegram bot working .
 
-If you have multiple Necrobot instance, you may need to create multiple telegram bot  but you also able to use 1 API key for all config.json. in that case when you type 1 command, all NECROBOT will anwser you, that is super good in case you want to snipe because all your bot recieve your command.
+If you have multiple Thunderbot instance, you may need to create multiple telegram bot  but you also able to use 1 API key for all config.json. in that case when you type 1 command, all NECROBOT will anwser you, that is super good in case you want to snipe because all your bot recieve your command.
 
 ``` 
 diff++NOTE: Snipe command is /Snipe PokemonName,Lat,Long   

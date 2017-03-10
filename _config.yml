@@ -1,4 +1,4 @@
-title:            NecroBot2
+title:            Thunderbot
 description:      "The opensource c# pokemon go bot"
 logo:             thunderbot.jpg
 disqus_shortname: thunderbotcom
@@ -11,18 +11,18 @@ url:        	 http://thunderbot.com
 
 # Owner/author information
 owner:
-  name:           ThunderBotIO
-  avatar:         thunderbot.jpg
-  email:          admin@thunderbot.io
+  name:           Thunderbot2 Team
+  avatar:         Thunderbot2.jpg
+  email:          Thunderbot2Team@gmail.com
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
   description:    Programming is 1% knowledge, 2% ability and 97% getting the ability to work with the knowledge :)
   # Social networking links used in footer. Update and remove as you like.
-  twitter:        ThunderbotTeam
-  facebook:       ThunderbotTeam
-  github:         ThunderbotTeam    
-  instagram:      ThunderbotTeam
+  twitter:        Thunderbot2Team
+  facebook:       Thunderbot2Team
+  github:         Thunderbot2Team    
+  instagram:      Thunderbot2Team
   # For Google Authorship https://plus.google.com/authorship
-  google_plus:    https://plus.google.com/u/0/+ThunderbotIO
+  google_plus:    https://plus.google.com/u/0/+Thunderbot2Team
 
 # Analytics and webmaster tools stuff goes here
 google_analytics:   UA-46791108-110
@@ -40,10 +40,13 @@ links:
   - title: Snipe
     url: http://snipe.thunderbot.com
     external: true
+#  - title: MSniper
+#    url: https://www.msniper.com
+#    external: true  
   - title: Documents
     url: /documents
   - title: Downloads
-    url: http://alturl.com/5kcig
+    url: https://github.com/Thunderbot-Private/NecroBot/releases/latest
     external: true
   - title: About
     url: /about

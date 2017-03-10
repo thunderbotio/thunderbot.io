@@ -20,7 +20,7 @@ Niantic apply some limit on your statistic to detect your account is BOT not a h
 If total of pokemon caught or pokestop looted in pass 24 hours over that values, you will triggered softban on your account and take a flag for higher ban risk
 
 # How to avoid it?
-Necrobot has implement the kill switch will allow you never over the limit. it will turn on by default in branch new bot setup, however, it will able to turn of by you in config.json
+Thunderbot has implement the kill switch will allow you never over the limit. it will turn on by default in branch new bot setup, however, it will able to turn of by you in config.json
 
 - Catch limit
 

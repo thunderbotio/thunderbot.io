@@ -9,7 +9,7 @@ tags:
 - Auth, Multi Account
 ---
 
-Necrobot support you config to rename the pokemon in your inventory to help easier manage them on the official app by look in their name since non of useful information show like Level, IV.
+Thunderbot support you config to rename the pokemon in your inventory to help easier manage them on the official app by look in their name since non of useful information show like Level, IV.
 
 You can turn on rename feature by  below config 
 

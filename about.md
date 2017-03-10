@@ -1,8 +1,8 @@
 ---
 layout: page
 permalink: /about/index.html
-title: Necrobot2
-tags: [Necrobot2]
+title: Thunderbot2
+tags: [Thunderbot2]
 chart: true
 ---
 
