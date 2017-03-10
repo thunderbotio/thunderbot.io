@@ -1,7 +1,7 @@
 ---
 author: samuraitruong
 layout: post
-title: "Runing Thunderbot2 with PF Hash service API"
+title: "Runing ThunderbotIO with PF Hash service API"
 date: 2017-01-07 8:30
 comments: true
 category: auth.json
@@ -37,7 +37,7 @@ If you are existing necro user, you need to edit auth.json to add your key, look
 {% endhighlight json%}
 Change it with your key then start bot
 
-[Read More  -Thunderbot2 supported API version ](/auth.json/2017/01/07/thunderbot-supported-api/)
+[Read More  -ThunderbotIO supported API version ](/auth.json/2017/01/07/thunderbot-supported-api/)
 
 
 Happy botting

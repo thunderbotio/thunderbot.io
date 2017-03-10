@@ -1,7 +1,7 @@
 ---
 author: samuraitruong
 layout: post
-title: "Thunderbot2 - Manual Snipe config"
+title: "ThunderbotIO - Manual Snipe config"
 date: 2017-01-07 10:30
 comments: true
 category: Config.json

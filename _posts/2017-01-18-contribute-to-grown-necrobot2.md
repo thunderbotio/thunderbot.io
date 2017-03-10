@@ -1,7 +1,7 @@
 ---
 author: samuraitruong
 layout: post
-title: "Contribute to help Thunderbot2 grow"
+title: "Contribute to help ThunderbotIO grow"
 date: 2017-01-11 0:30
 comments: true
 category: Announcement
@@ -28,14 +28,14 @@ If you having any issue that can use fork & Pull request, you can send me the wo
 
 Besides, Document update , you can also contribute by help us raise issue , feature request, ideals, or any enhancements you think it good to have in the bo
 
-our github issue page [https://github.com/Thunderbot-Private/NecroBot/issues](https://github.com/Thunderbot-Private/NecroBot/issues)
+our github issue page [https://github.com/Thunderbot-Private/Thunderbot/issues](https://github.com/Thunderbot-Private/Thunderbot/issues)
 
 
 # FOR DEVELOPERS
 
 You can help to improve bot by fix bug or add new features, very simple by visit issues page then pick up item you want to work. Put the comment there if you pickup and work on any item then I will know to ignore it when I look for item to fix. please follow below step
 
-- Fork Thunderbot repo - https://github.com/Thunderbot-Private/NecroBot
+- Fork Thunderbot repo - https://github.com/Thunderbot-Private/Thunderbot
 - Develop your code on master of any feature branch on your forked report
 - Create pull request back to original repo
 

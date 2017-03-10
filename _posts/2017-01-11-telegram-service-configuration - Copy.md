@@ -43,9 +43,9 @@ Pretty simple because there only few paramter you need to setup, please look for
 #Test your bot
 After you make that config change, you need to restart BOT, if you see the message on screen tell that you successful connect with your Telegram BOT, then you are settled. If you don't see message or get error, just need to verify that you enter correct API key, make sure no trail space after or before KEY, and make sure *UseTelegramAPI* is set to TRUE
 
-You need access telegram from web or from your phone, after your NECROBOT start, type anything if he reply with the menu includes all options you have then the NecroBOT and Telegram bot working .
+You need access telegram from web or from your phone, after your Thunderbot start, type anything if he reply with the menu includes all options you have then the Thunderbot and Telegram bot working .
 
-If you have multiple Thunderbot instance, you may need to create multiple telegram bot  but you also able to use 1 API key for all config.json. in that case when you type 1 command, all NECROBOT will anwser you, that is super good in case you want to snipe because all your bot recieve your command.
+If you have multiple Thunderbot instance, you may need to create multiple telegram bot  but you also able to use 1 API key for all config.json. in that case when you type 1 command, all Thunderbot will anwser you, that is super good in case you want to snipe because all your bot recieve your command.
 
 ``` 
 diff++NOTE: Snipe command is /Snipe PokemonName,Lat,Long   

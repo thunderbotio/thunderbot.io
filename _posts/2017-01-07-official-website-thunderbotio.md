@@ -1,7 +1,7 @@
 ---
 author: samuraitruong
 layout: post
-title: "Official launch Thunderbot2 website"
+title: "Official launch ThunderbotIO website"
 date: 2017-01-07 0:30
 comments: true
 category: announcement

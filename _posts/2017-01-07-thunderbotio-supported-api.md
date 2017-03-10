@@ -1,7 +1,7 @@
 ---
 author: samuraitruong
 layout: post
-title: "Thunderbot2 supported API version"
+title: "ThunderbotIO supported API version"
 date: 2017-01-07 10:30
 comments: true
 category: auth.json

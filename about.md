@@ -1,8 +1,8 @@
 ---
 layout: page
 permalink: /about/index.html
-title: Thunderbot2
-tags: [Thunderbot2]
+title: ThunderbotIO
+tags: [ThunderbotIO]
 chart: true
 ---
 

@@ -1,8 +1,8 @@
 ---
 layout: page
 permalink: /donate/index.html
-title: Thunderbot2
-tags: [Thunderbot2]
+title: ThunderbotIO
+tags: [ThunderbotIO]
 chart: true
 ---
  
@@ -16,5 +16,5 @@ chart: true
 </form>
 </div>
 
-Thanks for support us to keep developing Thunderbot2, We accept all donate amount, Donation will for be shared to active developers in project after spending for server cost (include this website and data snipe website). After you make donate, could you please PM discord admin to add donator tag for your name. then we can set as higher priroty to support just in case you having issue with Bot. Thanks
+Thanks for support us to keep developing ThunderbotIO, We accept all donate amount, Donation will for be shared to active developers in project after spending for server cost (include this website and data snipe website). After you make donate, could you please PM discord admin to add donator tag for your name. then we can set as higher priroty to support just in case you having issue with Bot. Thanks
 

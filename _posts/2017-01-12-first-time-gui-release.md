@@ -1,7 +1,7 @@
 ---
 author: samuraitruong
 layout: post
-title: "Thunderbot2 GUI release"
+title: "ThunderbotIO GUI release"
 date: 2017-01-11 0:30
 comments: true
 category: Announcement
