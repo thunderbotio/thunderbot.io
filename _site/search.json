@@ -1,0 +1,163 @@
+[
+	
+		{
+		  "title"      : "Human-like configuration",
+		  "category"   : "Config.json",
+		  "url"        : "http://localhost:4000/config.json/2017/02/25/human-like-config/",
+		  "date"       : "2017-02-25 14:41:00 +0000",
+		  "shortdate"  : "February 25, 2017"
+		} ,
+	
+		{
+		  "title"      : "Which package should I download?",
+		  "category"   : "Config.json",
+		  "url"        : "http://localhost:4000/config.json/2017/02/22/what-should-i-download/",
+		  "date"       : "2017-02-22 00:30:00 +0000",
+		  "shortdate"  : "February 22, 2017"
+		} ,
+	
+		{
+		  "title"      : "Berries config",
+		  "category"   : "Config.json",
+		  "url"        : "http://localhost:4000/config.json/2017/02/22/config-berries/",
+		  "date"       : "2017-02-22 00:30:00 +0000",
+		  "shortdate"  : "February 22, 2017"
+		} ,
+	
+		{
+		  "title"      : "Group filter settings",
+		  "category"   : "Config.json",
+		  "url"        : "http://localhost:4000/config.json/2017/02/22/group-filter-setting/",
+		  "date"       : "2017-02-22 00:30:00 +0000",
+		  "shortdate"  : "February 22, 2017"
+		} ,
+	
+		{
+		  "title"      : "Auto rename config guide",
+		  "category"   : "Config.json",
+		  "url"        : "http://localhost:4000/config.json/2017/02/03/auto-rename-syntax-config/",
+		  "date"       : "2017-02-03 00:30:00 +0000",
+		  "shortdate"  : "February 03, 2017"
+		} ,
+	
+		{
+		  "title"      : "Config multile account - extra (contribute community)",
+		  "category"   : "Auth.json",
+		  "url"        : "http://localhost:4000/auth.json/2017/01/23/multi-account-config-extra/",
+		  "date"       : "2017-01-23 00:30:00 +0000",
+		  "shortdate"  : "January 23, 2017"
+		} ,
+	
+		{
+		  "title"      : "Contribute to help Necrobot2 grow",
+		  "category"   : "Announcement",
+		  "url"        : "http://localhost:4000/announcement/2017/01/11/contribute-to-grown-necrobot2/",
+		  "date"       : "2017-01-11 00:30:00 +0000",
+		  "shortdate"  : "January 11, 2017"
+		} ,
+	
+		{
+		  "title"      : "How the limit reset works?",
+		  "category"   : "Announcement",
+		  "url"        : "http://localhost:4000/announcement/2017/01/11/how-catch-pokestop-limit-reset-work/",
+		  "date"       : "2017-01-11 00:30:00 +0000",
+		  "shortdate"  : "January 11, 2017"
+		} ,
+	
+		{
+		  "title"      : "Necrobot2 GUI release",
+		  "category"   : "Announcement",
+		  "url"        : "http://localhost:4000/announcement/2017/01/11/first-time-gui-release/",
+		  "date"       : "2017-01-11 00:30:00 +0000",
+		  "shortdate"  : "January 11, 2017"
+		} ,
+	
+		{
+		  "title"      : "Telegram configuration ",
+		  "category"   : "Config.json",
+		  "url"        : "http://localhost:4000/config.json/2017/01/11/telegram-service-configuration-Copy/",
+		  "date"       : "2017-01-11 00:30:00 +0000",
+		  "shortdate"  : "January 11, 2017"
+		} ,
+	
+		{
+		  "title"      : "Captcha Resolving config",
+		  "category"   : "Config.json",
+		  "url"        : "http://localhost:4000/config.json/2017/01/07/Captcha-resolving-config/",
+		  "date"       : "2017-01-07 20:30:00 +0000",
+		  "shortdate"  : "January 07, 2017"
+		} ,
+	
+		{
+		  "title"      : "Necrobot2 supported API version",
+		  "category"   : "auth.json",
+		  "url"        : "http://localhost:4000/auth.json/2017/01/07/necrobot2-supported-api/",
+		  "date"       : "2017-01-07 10:30:00 +0000",
+		  "shortdate"  : "January 07, 2017"
+		} ,
+	
+		{
+		  "title"      : "Necrobot2 - Manual Snipe config",
+		  "category"   : "Config.json",
+		  "url"        : "http://localhost:4000/config.json/2017/01/07/necrobot2-manual-snipe/",
+		  "date"       : "2017-01-07 10:30:00 +0000",
+		  "shortdate"  : "January 07, 2017"
+		} ,
+	
+		{
+		  "title"      : "Runing Necrobot2 with PF Hash service API",
+		  "category"   : "auth.json",
+		  "url"        : "http://localhost:4000/auth.json/2017/01/07/necrobot2-with-PF-hash-server/",
+		  "date"       : "2017-01-07 08:30:00 +0000",
+		  "shortdate"  : "January 07, 2017"
+		} ,
+	
+		{
+		  "title"      : "Basic transfer config",
+		  "category"   : "Config.json",
+		  "url"        : "http://localhost:4000/config.json/2017/01/07/necrobot2-basic-transfer-config/",
+		  "date"       : "2017-01-07 08:30:00 +0000",
+		  "shortdate"  : "January 07, 2017"
+		} ,
+	
+		{
+		  "title"      : "How to config auto sniper with necrobot2",
+		  "category"   : "Config.json",
+		  "url"        : "http://localhost:4000/config.json/2017/01/07/how-to-config-auto-snipe/",
+		  "date"       : "2017-01-07 08:30:00 +0000",
+		  "shortdate"  : "January 07, 2017"
+		} ,
+	
+		{
+		  "title"      : "How to config multiple account",
+		  "category"   : "auth.json",
+		  "url"        : "http://localhost:4000/auth.json/2017/01/07/multi-account-config/",
+		  "date"       : "2017-01-07 01:30:00 +0000",
+		  "shortdate"  : "January 07, 2017"
+		} ,
+	
+		{
+		  "title"      : "Notification config",
+		  "category"   : "Config.json",
+		  "url"        : "http://localhost:4000/config.json/2017/01/07/notification-config/",
+		  "date"       : "2017-01-07 00:30:00 +0000",
+		  "shortdate"  : "January 07, 2017"
+		} ,
+	
+		{
+		  "title"      : "Official launch Necrobot2 website",
+		  "category"   : "announcement",
+		  "url"        : "http://localhost:4000/announcement/2017/01/07/official-website-necrobot2/",
+		  "date"       : "2017-01-07 00:30:00 +0000",
+		  "shortdate"  : "January 07, 2017"
+		} ,
+	
+		{
+		  "title"      : "Release []",
+		  "category"   : "Releases",
+		  "url"        : "http://localhost:4000/releases/2017/01/01/release-template/",
+		  "date"       : "2017-01-01 00:00:00 +0000",
+		  "shortdate"  : "January 01, 2017"
+		} 
+	
+]

@@ -1,0 +1,1414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+
+
+
+<title type="text">NecroBot2</title>
+<generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
+<link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
+<link rel="alternate" type="text/html" href="http://localhost:4000/" />
+<updated>2017-03-06T11:08:54+00:00</updated>
+<id>http://localhost:4000/</id>
+<author>
+  <name>Necrobot2 Team</name>
+  <uri>http://localhost:4000/</uri>
+  <email>Necrobot2Team@gmail.com</email>
+</author>
+
+
+<entry>
+  <title type="html"><![CDATA[Human-like configuration]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/config.json/2017/02/25/human-like-config/"/>
+  <id>http://localhost:4000/config.json/2017/02/25/human-like-config</id>
+  <published>2017-02-25T14:41:00+00:00</published>
+  <updated>2017-02-25T14:41:00+00:00</updated>
+  <author>
+    <name>Necrobot2 Team</name>
+    <uri>http://localhost:4000</uri>
+    <email>Necrobot2Team@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#Delay,Human,Config" term="Delay,Human,Config" />
+  <content type="html">
+  
+    &lt;p&gt;Sometimes when you are botting, you wan’t to play safe and make your bot to act like a real client. There is few things to watch out in the config.json in order to make your bot more safer. I will list them and describe them below.&lt;/p&gt;
+
+&lt;p&gt;How does your player move? Movement is defined in LocationConfig-section. Note here that do you act like you are on foot, bicycle or a car? Avarage human walks 5 km/h, bicycler should go from 10-40 km/h and car can go up to 180 km/h. Please note that in order to hatch eggs, you should se speed under 12 km/h.&lt;/p&gt;
+
+&lt;p&gt;So for example, if you wish your bot to move like walking human, set config to this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;LocationConfig&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;WalkingSpeedInKilometerPerHour&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;5.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;UseWalkingSpeedVariant&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;WalkingSpeedVariant&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;},&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Then there is actions you can make and delays for them (to seem like a real client). There is new added feature to make your pokemoncatching a real client-like. These are things that you should understand:
+* Inside PokemonConfig section: DelayBetweenPokemonCatch. This is delay when you have caught the pokemon and start to capture a new one.
+* Whole PlayerConfig section: these delays are applied to actions your bot can do. It menas that if you set “DelayBetweenPlayerActions”: 1000, bot can interact with the world once every second.
+* New HumanlikeDelays section: These delays can be activated to make a catching a pokemon more realistic. Delays are applied based on what phase is your catch going (Throwing ball, Waiting catch animation etc.) You need to put “UseHumanlikeDelays”: true, if you wish to use these and PokemonConfig:DelayBetweenPokemonCatch to 0&lt;/p&gt;
+
+&lt;p&gt;So this is example how to make bot more humanlike (this might slower your xp/h but will make you more harder to be banned):&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PokemonConfig&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;DelayBetweenPokemonCatch&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  
+  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PlayerConfig&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;DelayBetweenPlayerActions&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;EvolveActionDelay&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;25000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;TransferActionDelay&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;RecycleActionDelay&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;RenamePokemonActionDelay&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;UseNearActionRandom&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;RandomizeSettingsByPercent&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;AutoFinishTutorial&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  
+  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;HumanlikeDelays&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;UseHumanlikeDelays&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;CatchSuccessDelay&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;13000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;CatchErrorDelay&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;CatchEscapeDelay&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;CatchFleeDelay&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;CatchMissedDelay&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;BeforeCatchDelay&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1500&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Notice that these values has been clocked from real client thus you should not lower these from defaults if you wish to act like a real client. If you use HumanlikeDelays, you can lower DelayBetweenPokemonCatch to 0 as humanlike will handle it and lower your DelayBetweenPlayerActions to about 2 secondish.
+If you lower default HumanlikeDelays, you can boost your xp/h, but is can be detectable by Niantic as the real client cannot make CatchSuccess under 13 seconds in any way.&lt;/p&gt;
+
+&lt;p&gt;Feel free to drop issue with HumanlikeDelays subject in github, or ping me in discord if i’m online :)&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/config.json/2017/02/25/human-like-config/&quot;&gt;Human-like configuration&lt;/a&gt; was originally published by Necrobot2 Team at &lt;a href=&quot;http://localhost:4000&quot;&gt;NecroBot2&lt;/a&gt; on February 25, 2017.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Which package should I download?]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/config.json/2017/02/22/what-should-i-download/"/>
+  <id>http://localhost:4000/config.json/2017/02/22/what-should-i-download</id>
+  <published>2017-02-22T00:30:00+00:00</published>
+  <updated>2017-02-22T00:30:00+00:00</updated>
+  <author>
+    <name>Necrobot2 Team</name>
+    <uri>http://localhost:4000</uri>
+    <email>Necrobot2Team@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#Starter,%20guides" term="Starter, guides" />
+  <content type="html">
+  
+    &lt;p&gt;There few packages of necrobot in download page sometime make people confused,  Each package does it function . please check quick tip below to select proper package suite to your need.&lt;/p&gt;
+
+&lt;p&gt;Download at [https://github.com/Necrobot-Private/NecroBot/releases/]{https://github.com/Necrobot-Private/NecroBot/releases/}&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;NecroBot2.WIN.zip   - All In One bot run as normal window application, support fully for bag, transfer, manage , Snipe&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;NecroBot2.Console.zip - A console application interface (command line) which is the core engine of bot. it run fast and don’t consume much resource&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;NecroBot2.GUI.Electron.zip - The web client GUI hosted by Electron . which can connect the bot and view it activity, interactive with bot view web interface.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;NecroBot2.GUI.zip same with Electron but host by window application&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/config.json/2017/02/22/what-should-i-download/&quot;&gt;Which package should I download?&lt;/a&gt; was originally published by Necrobot2 Team at &lt;a href=&quot;http://localhost:4000&quot;&gt;NecroBot2&lt;/a&gt; on February 22, 2017.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Berries config]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/config.json/2017/02/22/config-berries/"/>
+  <id>http://localhost:4000/config.json/2017/02/22/config-berries</id>
+  <published>2017-02-22T00:30:00+00:00</published>
+  <updated>2017-02-22T00:30:00+00:00</updated>
+  <author>
+    <name>Necrobot2 Team</name>
+    <uri>http://localhost:4000</uri>
+    <email>Necrobot2Team@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#Berries,%20Catching" term="Berries, Catching" />
+  <content type="html">
+  
+    &lt;p&gt;Two new berries type has been added into the game awhile ago, of course our bot have support for it very quickly just a day or so after release. However, I would writing a quick guide to explian how the config work&lt;/p&gt;
+
+&lt;h2 id=&quot;how-berries-work&quot;&gt;How berries work?&lt;/h2&gt;
+&lt;p&gt;Please check the post here &lt;a href=&quot;https://www.cnet.com/au/how-to/how-to-use-the-new-berries-in-pokemon-go/&quot;&gt;https://www.cnet.com/au/how-to/how-to-use-the-new-berries-in-pokemon-go/&lt;/a&gt; for learn about usage of new berries type&lt;/p&gt;
+
+&lt;h2 id=&quot;how-berries-config-with-necro&quot;&gt;How berries config with necro?&lt;/h2&gt;
+
+&lt;p&gt;We introduced config section “UseItemFilters” which allow us to separate control when to use berries,&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;err&quot;&gt;ItemUseFilters&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;: {
+    &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;ItemNanabBerry&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;: {
+      &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;UseItemMinIV&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;: 50,
+      &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;UseItemMinLevel&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;: 20,
+      &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;UseItemMinCP&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;: 500,
+      &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;Operator&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;: &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;and&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,
+      &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;CatchProbability&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;: 0.3,
+      &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;Pokemons&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;: [
+        &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;abra&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,
+        &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;dragonite&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,
+        &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;venusaur&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,
+        &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;blastoise&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,
+        &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;charizard&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;
+      ],
+      &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;MaxItemsUsePerPokemon&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;: 20,
+      &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;UseIfExceedBagRecycleFilter&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;: true
+    },
+    &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;ItemRazzBerry&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;: {
+      &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;UseItemMinIV&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;: 90,
+      &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;UseItemMinLevel&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;: 0,
+      &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;UseItemMinCP&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;: 1500,
+      &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;Operator&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;: &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;and&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,
+      &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;CatchProbability&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;: 0.5,
+      &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;Pokemons&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;: [],
+      &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;MaxItemsUsePerPokemon&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;: 20,
+      &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;UseIfExceedBagRecycleFilter&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;: true
+    },
+    &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;ItemPinapBerry&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;: {
+      &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;UseItemMinIV&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;: 0,
+      &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;UseItemMinLevel&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;: 0,
+      &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;UseItemMinCP&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;: 0,
+      &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;Operator&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;: &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;or&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,
+      &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;CatchProbability&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;: 1.0,
+      &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;Pokemons&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;: [
+        &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;lapras&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,
+        &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;larvitar&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,
+        &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;snorlax&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,
+        &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;chansey&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,
+        &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;dratini&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,
+        &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;porygon&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,
+        &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;porygon&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,
+        &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;sunkern&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;
+      ],
+      &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;MaxItemsUsePerPokemon&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;: 10,
+      &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;UseIfExceedBagRecycleFilter&quot;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;UseItemMinIV&lt;/em&gt; : Define min IV to use this type of berries&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;UseItemMinLevel&lt;/em&gt; : Define min level to use this type berries, if you don’t want to check you can set it to level 0, make sure you use “and” logic&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;UseItemMinCP&lt;/em&gt; : Same with above, this to define the CP of pokemon to use&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Operator&lt;/em&gt;: The logic check between all setting parameter .&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;CatchProbability&lt;/em&gt;: The catch chance of the pokemon&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Pokemons&lt;/em&gt; : List of pokemon you want to use this type of berry. leave it null or empty “[]” it will apply to all pokemon.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;UseIfExceedBagRecycleFilter&lt;/em&gt;: Regardless the condition, if number of berry is greater than the recycel setting this this berry time. bot will use it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;how-to-priority-berries&quot;&gt;How to priority berries&lt;/h2&gt;
+
+&lt;p&gt;The list will priority by order, in the example above, Nanab is first priority then Razz and finially is Pinnab. If 1 pokemon matching with multiple berries, only 1 berry will be use and that is the first berry met with condition from top to bottom.&lt;/p&gt;
+
+&lt;h2 id=&quot;tips-to-config&quot;&gt;Tips to config&lt;/h2&gt;
+&lt;p&gt;Make sure you understand the usage by read the above post. For example, use Pinnab berry for the pokemon you want to have candy like Larvitar, Chansey, Porygon. make sure you don’t waste berry, only use when they are easy to catch so low level, low CP&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/config.json/2017/02/22/config-berries/&quot;&gt;Berries config&lt;/a&gt; was originally published by Necrobot2 Team at &lt;a href=&quot;http://localhost:4000&quot;&gt;NecroBot2&lt;/a&gt; on February 22, 2017.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Group filter settings]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/config.json/2017/02/22/group-filter-setting/"/>
+  <id>http://localhost:4000/config.json/2017/02/22/group-filter-setting</id>
+  <published>2017-02-22T00:30:00+00:00</published>
+  <updated>2017-02-22T00:30:00+00:00</updated>
+  <author>
+    <name>Necrobot2 Team</name>
+    <uri>http://localhost:4000</uri>
+    <email>Necrobot2Team@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#Snipe,Upgrade,Config" term="Snipe,Upgrade,Config" />
+  <content type="html">
+  
+    &lt;p&gt;If you are familiar with necrobot setting/filter/config system you will see if very powerful and flexiable. however, for newbie , most of them strugge with the huge json file. The new requirement had been implmenet to clean up and make setting shorter and easier to read and config. What what I call group filter setting.&lt;/p&gt;
+
+&lt;p&gt;As you all know that you can put 720 different filter for control your bot but it seem overkill because most we should partition pokemons to a group. this change allow you do that&lt;/p&gt;
+
+&lt;p&gt;You will see the new key config add to your filter look like below (SnipeFilter)&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Snorlax&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;SnipeIV&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;95&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Moves&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Operator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;and&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;VerifiedOnly&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Priority&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;AutoSnipeCandy&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Level&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;AllowMultiAccountSnipe&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;AffectToPokemons&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;lapras&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;dragonite&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Above example I grouped Lax, Lap, and Nite to same config before I have to make 3 separate config if I want to overwrite the global config setting. If you want to keep moves, you have to put all moves set of 3 type in the moves setting&lt;/p&gt;
+
+&lt;p&gt;Of course, the invidiual filter still work, and priority is the single filter over group filter.&lt;/p&gt;
+
+&lt;p&gt;This change was apply for 
+* Snipe filter
+* Upgrade Filter
+* Transfer Filter
+* Favorite filter&lt;/p&gt;
+
+&lt;p&gt;(Will add support for bot switch and human walk snipe later )&lt;/p&gt;
+
+&lt;p&gt;I also would say something about how AutoSnipeCandy work, this feature allow you collect candy for specific pokemon. with the setting above , I tell bot to get 2000 candies for those pokemon. Bot will ignore all setting about Level, Move, IV to get enought 2000 candies, after it collected 2000 candies, bot only snipe level 30 and IV 95+ , (Move set  if you set in)&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/config.json/2017/02/22/group-filter-setting/&quot;&gt;Group filter settings&lt;/a&gt; was originally published by Necrobot2 Team at &lt;a href=&quot;http://localhost:4000&quot;&gt;NecroBot2&lt;/a&gt; on February 22, 2017.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Auto rename config guide]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/config.json/2017/02/03/auto-rename-syntax-config/"/>
+  <id>http://localhost:4000/config.json/2017/02/03/auto-rename-syntax-config</id>
+  <published>2017-02-03T00:30:00+00:00</published>
+  <updated>2017-02-03T00:30:00+00:00</updated>
+  <author>
+    <name>Necrobot2 Team</name>
+    <uri>http://localhost:4000</uri>
+    <email>Necrobot2Team@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#Auth,%20Multi%20Account" term="Auth, Multi Account" />
+  <content type="html">
+  
+    &lt;p&gt;Necrobot support you config to rename the pokemon in your inventory to help easier manage them on the official app by look in their name since non of useful information show like Level, IV.&lt;/p&gt;
+
+&lt;p&gt;You can turn on rename feature by  below config&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PokemonConfig&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;RenamePokemon&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;RenameOnlyAboveIv&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;RenameTemplate&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;{IV}_{Name}_LV{Level}&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;If you turn &lt;em&gt;RenameOnlyAboveIv&lt;/em&gt; to true, then bot only rename those pokemon has IV &amp;gt; KeepMinIV value. this is just check for global transfer minIV. I will make change to check for transfer filter, make sure that bot only rename those pokemon we decided to keep&lt;/p&gt;
+
+&lt;p&gt;RenameTemplate support 4 tokens below&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;{IV} =&amp;gt; will replace by pokemon IV, 0 decimal place&lt;/li&gt;
+  &lt;li&gt;{Level} =&amp;gt; Pokemon Level&lt;/li&gt;
+  &lt;li&gt;{CP} =&amp;gt; Pokemon CP&lt;/li&gt;
+  &lt;li&gt;{Name} =&amp;gt; Pokemon Name&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The limit of pokemon name is 12 characters lengh, so please make sure you don’t put  to many thing in the template, if the lengh is longer then 12 character, it will be trimmged back to 12 character.&lt;/p&gt;
+
+&lt;p&gt;You also can add more free characters into your pattern&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_LV&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;LV&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;IV&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;cheers&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/config.json/2017/02/03/auto-rename-syntax-config/&quot;&gt;Auto rename config guide&lt;/a&gt; was originally published by Necrobot2 Team at &lt;a href=&quot;http://localhost:4000&quot;&gt;NecroBot2&lt;/a&gt; on February 03, 2017.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Config multile account - extra (contribute community)]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/auth.json/2017/01/23/multi-account-config-extra/"/>
+  <id>http://localhost:4000/auth.json/2017/01/23/multi-account-config - extra</id>
+  <published>2017-01-23T00:30:00+00:00</published>
+  <updated>2017-01-23T00:30:00+00:00</updated>
+  <author>
+    <name>Necrobot2 Team</name>
+    <uri>http://localhost:4000</uri>
+    <email>Necrobot2Team@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#Auth,%20Multi%20Account" term="Auth, Multi Account" />
+  <content type="html">
+  
+    &lt;p&gt;Easy instructions to set Necrobot to run multiple accounts one after each other&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;In auth.json, set login credentials to your 1st account&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;AuthConfig&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;AuthType&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ptc&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;GoogleUsername&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;GooglePassword&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;PtcUsername&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;1st_account_name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;PtcPassword&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;1st_account_pass&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+   &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Near bottom of auth.json set your other accounts&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;AllowMultipleBot&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Bots&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;AuthType&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;google&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;GoogleUsername&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;2nd_account@gmail.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;GooglePassword&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;2nd_account_pass&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PtcUsername&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;PtcPassword&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;AuthType&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ptc&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;GoogleUsername&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;GooglePassword&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;PtcUsername&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;3rd_account_name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;PtcPassword&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;3rd_account_pass&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;In config.json, tweak the Multi Bot settings as desired&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;MultipleBotConfig&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;RuntimeSwitch&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;55&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;OnLimitPauseTimes&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;15&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;OnRarePokemon&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;MinIVToSwitch&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;101.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;EXPSwitch&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;25000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;PokestopSwitch&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;PokemonSwitch&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;PokemonPerHourSwitch&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;StartFromDefaultLocation&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;PokestopSoftbanCount&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;DisplayList&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;SelectAccountOnStartUp&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;CatchFleeCount&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;SwitchOnCatchLimit&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;SwitchOnPokestopLimit&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/auth.json/2017/01/23/multi-account-config-extra/&quot;&gt;Config multile account - extra (contribute community)&lt;/a&gt; was originally published by Necrobot2 Team at &lt;a href=&quot;http://localhost:4000&quot;&gt;NecroBot2&lt;/a&gt; on January 23, 2017.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Contribute to help Necrobot2 grow]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/announcement/2017/01/11/contribute-to-grown-necrobot2/"/>
+  <id>http://localhost:4000/announcement/2017/01/11/contribute-to-grown-necrobot2</id>
+  <published>2017-01-11T00:30:00+00:00</published>
+  <updated>2017-01-11T00:30:00+00:00</updated>
+  <author>
+    <name>Necrobot2 Team</name>
+    <uri>http://localhost:4000</uri>
+    <email>Necrobot2Team@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#General" term="General" />
+  <content type="html">
+  
+    &lt;p&gt;Hi Folks,&lt;/p&gt;
+
+&lt;p&gt;We has made an awesome Necrobot cross timelines from initial version Necrobot , to Necrobot 2 and with a many activity development recently with ton of features added , bug fixing and enhancement everyday. That was result of the open source comunity and all other people has contribute their time as well as their Ideal to improve and promote Necrobot. I would thanks to all people stay with Necrobot for a long time since we first introduce. (Note: I am not an original creator of Necrobot, I just pickup it and maintain it up to date)&lt;/p&gt;
+
+&lt;p&gt;I will keep my work to keep Necrobot alive in our comunity belong with other paid bot. We don’t need to be come number 1 BOT but we need to make our user base happy with features, bug fixes, enhancement and support. That why I make writing this article to make a call of all our community to help improve Necrobot. Don’t need to worries if you are not a dev and don’t know anything about code, you will still able help us to improve by 1 of method below&lt;/p&gt;
+
+&lt;h1 id=&quot;for-non-developer&quot;&gt;FOR NON DEVELOPER&lt;/h1&gt;
+&lt;p&gt;If you are not developer of you don’t have any experience with development work, you can contribute by make a document for feature config, or support people has issue in Discord room.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;To help with document, if you know about github then you can use github fork &amp;amp; pull request model to make new document or modified my existing document to make sure it is clear and easy to understanding for all people read it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Our document repo here - https://github.com/Necrobot-Private/necrobot2.com&lt;/p&gt;
+
+&lt;p&gt;Please read this great article for fork and make change file with git &lt;a href=&quot;https://guides.github.com/activities/forking/&quot;&gt;https://guides.github.com/activities/forking/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If you having any issue that can use fork &amp;amp; Pull request, you can send me the word document or text file. I will help to push it back to report.&lt;/p&gt;
+
+&lt;p&gt;Besides, Document update , you can also contribute by help us raise issue , feature request, ideals, or any enhancements you think it good to have in the bo&lt;/p&gt;
+
+&lt;p&gt;our github issue page &lt;a href=&quot;https://github.com/Necrobot-Private/NecroBot/issues&quot;&gt;https://github.com/Necrobot-Private/NecroBot/issues&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;for-developers&quot;&gt;FOR DEVELOPERS&lt;/h1&gt;
+
+&lt;p&gt;You can help to improve bot by fix bug or add new features, very simple by visit issues page then pick up item you want to work. Put the comment there if you pickup and work on any item then I will know to ignore it when I look for item to fix. please follow below step&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Fork Necrobot repo - https://github.com/Necrobot-Private/NecroBot&lt;/li&gt;
+  &lt;li&gt;Develop your code on master of any feature branch on your forked report&lt;/li&gt;
+  &lt;li&gt;Create pull request back to original repo&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you are new to github, please PM on discord I will help you go throught process&lt;/p&gt;
+
+&lt;h1 id=&quot;multiple-language&quot;&gt;MULTIPLE LANGUAGE&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;Our transation is out of date , we need whole comunity help to improve the language transation to make bot easier to use for other people using same language with you, please help us to translate all message still in your english to your own language.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Please follow Fork &amp;amp; Pull request model i mention above to make language translation.&lt;/p&gt;
+
+&lt;p&gt;Thanks for your support , we will grown strong toghether as an opensource comunity.&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/announcement/2017/01/11/contribute-to-grown-necrobot2/&quot;&gt;Contribute to help Necrobot2 grow&lt;/a&gt; was originally published by Necrobot2 Team at &lt;a href=&quot;http://localhost:4000&quot;&gt;NecroBot2&lt;/a&gt; on January 11, 2017.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[How the limit reset works?]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/announcement/2017/01/11/how-catch-pokestop-limit-reset-work/"/>
+  <id>http://localhost:4000/announcement/2017/01/11/how-catch-pokestop-limit-reset-work</id>
+  <published>2017-01-11T00:30:00+00:00</published>
+  <updated>2017-01-11T00:30:00+00:00</updated>
+  <author>
+    <name>Necrobot2 Team</name>
+    <uri>http://localhost:4000</uri>
+    <email>Necrobot2Team@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#GUI" term="GUI" />
+  <content type="html">
+  
+    &lt;p&gt;Reset limit is awesome feature that control number of pokestop or pokemon cauht winthin the limit to avoid softban affected on your account.&lt;/p&gt;
+
+&lt;h1 id=&quot;what-are-limits&quot;&gt;What are limits?&lt;/h1&gt;
+
+&lt;p&gt;Niantic apply some limit on your statistic to detect your account is BOT not a human that you should know
+- 1000 pokemon caught limit in 24 hours
+- 2000 pokestop visit/looted in 24 hours&lt;/p&gt;
+
+&lt;p&gt;If total of pokemon caught or pokestop looted in pass 24 hours over that values, you will triggered softban on your account and take a flag for higher ban risk&lt;/p&gt;
+
+&lt;h1 id=&quot;how-to-avoid-it&quot;&gt;How to avoid it?&lt;/h1&gt;
+&lt;p&gt;Necrobot has implement the kill switch will allow you never over the limit. it will turn on by default in branch new bot setup, however, it will able to turn of by you in config.json&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Catch limit&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt;	 &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PokemonConfig&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;UseCatchLimit&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;CatchPokemonLimit&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;998&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;CatchPokemonLimitMinutes&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1470&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;............&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;CatchPokemonLimit&lt;/em&gt; :Number of pokemon you allow bot catch in duration setup in CatchPokemonLimitMinutes
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;CatchPokemonLimitMinutes&lt;/em&gt; : Duration 1470 minute ~ 24h&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Pokestop limit&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PokeStopConfig&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;UsePokeStopLimit&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;PokeStopLimit&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1700&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;PokeStopLimitMinutes&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1470&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;NOTE : When you turn on these option, BOT will output the message count everytime it catch pokemon or spin pokestop.&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;how-bot-works&quot;&gt;How bot works&lt;/h1&gt;
+&lt;p&gt;Bot will store all data about catch pokemon and pokestop in a local database file name sessiondb in your account folder (under config folder). Everytime before catch pokemon or spin pokestop, bot will remove all data which older than 24 hours then count number of item in still there, if number of remaining item &amp;gt;= limit, Bot will cancel action and stop or keep going depend on your config&lt;/p&gt;
+
+&lt;p&gt;It mean that the reset happen in every minutes let see this example&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;I start bot and catch 150 pokemon in 1 hours, I go to to take a nap for 30 min&lt;/li&gt;
+  &lt;li&gt;Assume that in first 30 min I catch 100 pkm&lt;/li&gt;
+  &lt;li&gt;After wake up, I open bot and catch will still 150 because those data &amp;lt; 24h&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;another example:&lt;/p&gt;
+
+&lt;p&gt;I keep that bot running for 12h and it hit the limit 998, OK I stop bot&lt;/p&gt;
+
+&lt;p&gt;1 hour later, I open bot , remember in first hours my bot caught 150 pkm, then now the limit been reseted to 998-150. with that amount I can keep bot running until total number item &amp;gt;= 998&lt;/p&gt;
+
+&lt;p&gt;That is Pro-rata data cycle, not mean if you start bot from 7AM, then you have to wait util 7AM next day to reset it back to 0.&lt;/p&gt;
+
+&lt;h1 id=&quot;can-i-delete-sessiondb&quot;&gt;Can I delete sessiondb&lt;/h1&gt;
+
+&lt;p&gt;Yes, you can but bot won’t understand historical data, then limit will reset back to 0 and you may be softban if catch over limit,&lt;/p&gt;
+
+&lt;h1 id=&quot;can-i-view-raw-data&quot;&gt;Can I view raw data&lt;/h1&gt;
+
+&lt;p&gt;Yes, data is liteDB you can use any LiteDB tool to view it - &lt;a href=&quot;https://github.com/falahati/LiteDBViewer&quot;&gt;https://github.com/falahati/LiteDBViewer&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The raw data is just a timestamp. you need to make sure that the last 1 is 24 hours ago - copy the value and come to &lt;a href=&quot;http://tickstodatetime.com/&quot;&gt;http://tickstodatetime.com&lt;/a&gt; and see what is the time for that value&lt;/p&gt;
+
+&lt;p&gt;Pleaes do not manually delete sessiondb, or remove data in that table it will cause softban to your account&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/announcement/2017/01/11/how-catch-pokestop-limit-reset-work/&quot;&gt;How the limit reset works?&lt;/a&gt; was originally published by Necrobot2 Team at &lt;a href=&quot;http://localhost:4000&quot;&gt;NecroBot2&lt;/a&gt; on January 11, 2017.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Necrobot2 GUI release]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/announcement/2017/01/11/first-time-gui-release/"/>
+  <id>http://localhost:4000/announcement/2017/01/11/first-time-gui-release</id>
+  <published>2017-01-11T00:30:00+00:00</published>
+  <updated>2017-01-11T00:30:00+00:00</updated>
+  <author>
+    <name>Necrobot2 Team</name>
+    <uri>http://localhost:4000</uri>
+    <email>Necrobot2Team@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#GUI" term="GUI" />
+  <content type="html">
+  
+    &lt;p&gt;Necrobot is supporting by web GUI but since the limit of Web GUI block by some operation system and difficult to use  for some people. We now happy to have official release windows GUI which not require socket connection to use.&lt;/p&gt;
+
+&lt;p&gt;With the initial release, It was supposed that a beta release for GUI. and many feature still Work in progress and has many issue. We has few initial feature is working&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Map view : view only no interaction&lt;/li&gt;
+  &lt;li&gt;Pokemon : Transfer, Evolve, Favorite is working, powerup is not working , max powerup&lt;/li&gt;
+  &lt;li&gt;Bags : Allow drop item&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;#What are comming
+- Map with interaction 
+- Enhance the pokemon list to allow filter and search
+- Add Eggs list and manage eggs
+- Add Sniper list and allow manual snipe from the list
+- Bug fix to make gui stable&lt;/p&gt;
+
+&lt;p&gt;If you have any idea, bug please post on our issue page or ping me on Discord. If you have issue with GUI or new version in these days, please rollback to previous version until we have a stable release. Sorry for any inconvinience .&lt;/p&gt;
+
+&lt;p&gt;Cheers&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/announcement/2017/01/11/first-time-gui-release/&quot;&gt;Necrobot2 GUI release&lt;/a&gt; was originally published by Necrobot2 Team at &lt;a href=&quot;http://localhost:4000&quot;&gt;NecroBot2&lt;/a&gt; on January 11, 2017.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Telegram configuration ]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/config.json/2017/01/11/telegram-service-configuration-Copy/"/>
+  <id>http://localhost:4000/config.json/2017/01/11/telegram-service-configuration - Copy</id>
+  <published>2017-01-11T00:30:00+00:00</published>
+  <updated>2017-01-11T00:30:00+00:00</updated>
+  <author>
+    <name>Necrobot2 Team</name>
+    <uri>http://localhost:4000</uri>
+    <email>Necrobot2Team@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#notification,Telegram" term="notification,Telegram" />
+  <content type="html">
+  
+    &lt;p&gt;Telegram is a bot service that allow you control your bot when you are not on PC, Telegram also good to use to recieve notificaiton from BOT such as Captcha, Account reach limit, see Notificaiton config for more detail. Please follow step to config your bot work with Telegram&lt;/p&gt;
+
+&lt;h1 id=&quot;create-an-teleram-bot&quot;&gt;Create an Teleram bot&lt;/h1&gt;
+&lt;p&gt;You have to register an account and create an a bot with BotFather, then He will give you API key to config in config.json. Telegram can be install by app on your phone or access via web from &lt;a href=&quot;web.telegram.org&quot;&gt;https://web.telegram.org&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Use the /newbot command to create a new bot. The BotFather will ask you for a name and username, then generate an authorization token for your new bot.&lt;/p&gt;
+
+&lt;p&gt;The name of your bot is displayed in contact details and elsewhere.&lt;/p&gt;
+
+&lt;p&gt;The Username is a short name, to be used in mentions and telegram.me links. Usernames are 5-32 characters long and are case insensitive, but may only include Latin characters, numbers, and underscores. Your bot’s username must end in ‘bot’, e.g. ‘tetris_bot’ or ‘TetrisBot’.&lt;/p&gt;
+
+&lt;p&gt;The token is a string along the lines of 110201543:AAHdqTcvCH1vGWJxfSeofSAs0K5PALDsaw that is required to authorize the bot and send requests to the Bot API.&lt;/p&gt;
+
+&lt;p&gt;Read more about telegram at - &lt;a href=&quot;https://core.telegram.org/bots&quot;&gt;https://core.telegram.org/bots&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;#Setup Necrobot work with telegram&lt;/p&gt;
+
+&lt;p&gt;Pretty simple because there only few paramter you need to setup, please look for config below in config.json&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;TelegramConfig&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;UseTelegramAPI&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;TelegramAPIKey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;COPY API KEY THAT BOT FATHER GIVE YOU&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;TelegramPassword&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+  &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;#Test your bot
+After you make that config change, you need to restart BOT, if you see the message on screen tell that you successful connect with your Telegram BOT, then you are settled. If you don’t see message or get error, just need to verify that you enter correct API key, make sure no trail space after or before KEY, and make sure &lt;em&gt;UseTelegramAPI&lt;/em&gt; is set to TRUE&lt;/p&gt;
+
+&lt;p&gt;You need access telegram from web or from your phone, after your NECROBOT start, type anything if he reply with the menu includes all options you have then the NecroBOT and Telegram bot working .&lt;/p&gt;
+
+&lt;p&gt;If you have multiple Necrobot instance, you may need to create multiple telegram bot  but you also able to use 1 API key for all config.json. in that case when you type 1 command, all NECROBOT will anwser you, that is super good in case you want to snipe because all your bot recieve your command.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;diff++NOTE: Snipe command is /Snipe PokemonName,Lat,Long   
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Happy botting :)&lt;/p&gt;
+
+&lt;p&gt;Cheers&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/config.json/2017/01/11/telegram-service-configuration-Copy/&quot;&gt;Telegram configuration &lt;/a&gt; was originally published by Necrobot2 Team at &lt;a href=&quot;http://localhost:4000&quot;&gt;NecroBot2&lt;/a&gt; on January 11, 2017.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Captcha Resolving config]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/config.json/2017/01/07/Captcha-resolving-config/"/>
+  <id>http://localhost:4000/config.json/2017/01/07/Captcha-resolving-config</id>
+  <published>2017-01-07T20:30:00+00:00</published>
+  <updated>2017-01-07T20:30:00+00:00</updated>
+  <author>
+    <name>Necrobot2 Team</name>
+    <uri>http://localhost:4000</uri>
+    <email>Necrobot2Team@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#Captcha;Manual%20Captcha;Auto%20Captcha" term="Captcha;Manual Captcha;Auto Captcha" />
+  <content type="html">
+  
+    &lt;p&gt;No matter what you are bot or human, in some case Niantic will detect your activity as a suspicious activities then they will display a captcha to verify you are not a bot. Resolving captcha in bot very important because once captcha display, all activity need to stop until it resolved. If we keep the bot sending API call to server, They may ban us, so please follow below config to make sure that we are good to run bot 247&lt;/p&gt;
+
+&lt;h1 id=&quot;manual-resolving-config&quot;&gt;Manual resolving config&lt;/h1&gt;
+
+&lt;p&gt;We are using Chrome browser to display captcha then you solve captcha manualy, then bot will continue after you solve the captcha, after 120 - configurable time and you didn’t solve captcha, bot will stop 
+- Display message and exit if you are in single bot mode
+- Send notification and change to next bot also block current bot for 15 mins if you in multi accounts mode&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;CaptchaConfig&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;AllowManualCaptchaResolve&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;ManualCaptchaTimeout&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;120&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;PlaySoundOnCaptcha&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;DisplayOnTop&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;...........&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;div class=&quot;language-diff highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gd&quot;&gt;--NOTE: MANUAL CAPTCHA SOLVING REQUIRE CHROME BROWSER INSTALL ON YOUR MACHINE
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;auto-resolving-captcha-with-2captcha-service&quot;&gt;Auto resolving captcha with 2Captcha service&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://2captcha.com&quot;&gt;2Captcha&lt;/a&gt; is the online service provide that workers with low price to resolve captcha for you, the cost quite good only 3$/1000 captcha resolved. 
+- Go to 2captcha.com and register an account
+- Deposit an small amount of money into your account
+- Make sure Sandbox off (in developer menu)
+- Copy API key and fill the config as below&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;CaptchaConfig&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;AutoCaptchaRetries&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;TwoCaptchaAPIKey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;xxxxxxxxxxxxxxxxxx&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Enable2Captcha&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;...........&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h1 id=&quot;auto-resolving-captcha-with-solutioncaptcha-service&quot;&gt;Auto resolving captcha with SolutionCaptcha service&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.captchasolutions.com/clients/login/&quot;&gt;Solution Captcha&lt;/a&gt; also provide same service as 2Captcha, You need register an account, order package of tokens then use them&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;CaptchaConfig&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;AutoCaptchaRetries&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;CaptchaSolutionAPIKey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;CaptchaSolutionsSecretKey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;xxxxxxxxxxx&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;...........&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Sometimes, Auto captcha service is down or not stable, then bot will fallback to manual captcha before sending notification and stop, make sure you have notification setup actioned just in case bot not able to resolve automatically.&lt;/p&gt;
+
+&lt;p&gt;Happy botting .. :)&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/config.json/2017/01/07/Captcha-resolving-config/&quot;&gt;Captcha Resolving config&lt;/a&gt; was originally published by Necrobot2 Team at &lt;a href=&quot;http://localhost:4000&quot;&gt;NecroBot2&lt;/a&gt; on January 07, 2017.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Necrobot2 supported API version]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/auth.json/2017/01/07/necrobot2-supported-api/"/>
+  <id>http://localhost:4000/auth.json/2017/01/07/necrobot2-supported-api</id>
+  <published>2017-01-07T10:30:00+00:00</published>
+  <updated>2017-01-07T10:30:00+00:00</updated>
+  <author>
+    <name>Necrobot2 Team</name>
+    <uri>http://localhost:4000</uri>
+    <email>Necrobot2Team@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#auth,%20hash%20server,%20hash%20key" term="auth, hash server, hash key" />
+  <content type="html">
+  
+    &lt;p&gt;Since 0.49 API forced to update, PogoDev and RE won’t release public API any more, It mean that we won’t have a latest API to run bot, However, Pogodev &amp;amp; Pokefamer came with paid solution to access their service which using lastest api version to hashing data before send back to Niantic.&lt;/p&gt;
+
+&lt;p&gt;*What API available in necrobot2
+Necrobot allow you choose Legacy API 0.45 or Using PF hash server, the only thing you need do do is update APIconfig section in auth.json as below&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt;  
+
+ &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;APIConfig&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;UsePogoDevAPI&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;AuthAPIKey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PUT YOUR API KEY HERE&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;UseLegacyAPI&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;DiplayHashServerLog&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Bot require you select 1 option to run.&lt;/p&gt;
+
+&lt;h1 id=&quot;should-i-use-legacy-version&quot;&gt;Should I use Legacy version?&lt;/h1&gt;
+
+&lt;p&gt;Quick anwser is no, because old API easy to be tracked by Niantic and flag your account, most likely that you account will be ban in their ban wave.  If you running bot with Old API, bot will display an warning message when starting and pause in 15 sec for you have a chance your mind and close it before it make any call to server.&lt;/p&gt;
+
+&lt;h1 id=&quot;where-i-can-buy-hash-api&quot;&gt;Where I can buy Hash API&lt;/h1&gt;
+
+&lt;p&gt;Necrobot doesn’t provide service for API key, you have to buy it from Pokefamer, please read below
+&lt;a href=&quot;https://talk.pogodev.org/d/51-api-hashing-service-by-pokefarmer,&amp;quot;API Hashing Service by PokeFarmer&amp;quot;&quot;&gt;API Hashing Service by PokeFarmer&lt;/a&gt;
+Sometime you will get the key by email very fast after checkout, however, most case will require few hours before you get email from them.&lt;/p&gt;
+
+&lt;h1 id=&quot;what-is-rpm-and-what-should-i-buy&quot;&gt;What is RPM and what should I buy&lt;/h1&gt;
+
+&lt;p&gt;RPM is request per Minute that bot make to server. depend on your config and delay as well as your network perfomance, RPM from our bot will varied, Normaly, One bot instance will ue about 40 RPM, It mean that with the minumun key 150 RPM you able to run 3 bots. Also, if you want to see how many request that your bot config use, you can turn Verbose log on&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt;  
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;DiplayHashServerLog&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;json&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Note: auth.json not auto reload when you change, any change in this file require you restart bot.&lt;/p&gt;
+
+&lt;p&gt;Happy botting .. :)&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/auth.json/2017/01/07/necrobot2-supported-api/&quot;&gt;Necrobot2 supported API version&lt;/a&gt; was originally published by Necrobot2 Team at &lt;a href=&quot;http://localhost:4000&quot;&gt;NecroBot2&lt;/a&gt; on January 07, 2017.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Necrobot2 - Manual Snipe config]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/config.json/2017/01/07/necrobot2-manual-snipe/"/>
+  <id>http://localhost:4000/config.json/2017/01/07/necrobot2-manual-snipe</id>
+  <published>2017-01-07T10:30:00+00:00</published>
+  <updated>2017-01-07T10:30:00+00:00</updated>
+  <author>
+    <name>Necrobot2 Team</name>
+    <uri>http://localhost:4000</uri>
+    <email>Necrobot2Team@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#snipe,%20manual,%20socketdata" term="snipe, manual, socketdata" />
+  <content type="html">
+  
+    &lt;p&gt;Necrobot version &amp;gt; 1.0.0.30 support manual snipe , which is suite for everyone who don’t want to setup auto snipe.&lt;/p&gt;
+
+&lt;h1 id=&quot;how-manual-snipe-work&quot;&gt;How manual snipe work&lt;/h1&gt;
+
+&lt;p&gt;Your bot is running , you will visit website &lt;a href=&quot;'http://snipe.necrobot2.com'&quot;&gt;snipe.necrobot2.com&lt;/a&gt; and looking for good pokemon, if you want bot cach him just click on him, that’s all. but before the magical happen, you need to do a very simple setup as below&lt;/p&gt;
+
+&lt;p&gt;Generate your unique ID, BOT &amp;amp; mypogosnipers.com will use this UUID to make a handshake, You can using 1 UUID share with all other instance of bot running (which is great , you click one and all your bot will catch him, nice isn’t ). You can also share your UUID with your friend and snipe to gether , that is double cool&lt;/p&gt;
+
+&lt;h1 id=&quot;so-how-uuid-look-like&quot;&gt;So, how UUID look like?&lt;/h1&gt;
+&lt;p&gt;UUID is a unique string you can use your personal email, phone, whatever string you think it is unique and only you know. I recommend to generate 1 UUID from here&lt;/p&gt;
+
+&lt;p&gt;https://www.guidgen.com/&lt;/p&gt;
+
+&lt;p&gt;OR 
+https://www.uuidgenerator.net/&lt;/p&gt;
+
+&lt;p&gt;OR https://www.guidgenerator.com/online-guid-generator.aspx&lt;/p&gt;
+
+&lt;p&gt;Next step, you need to have a version of bot &amp;gt; 1.0.0.30 to have the new awesome feature. Setup bot with the UUID you generated above in config.json as below&lt;/p&gt;
+
+&lt;h1 id=&quot;change-config-for-support-manual-snipe&quot;&gt;Change config for support manual snipe&lt;/h1&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;s2&quot;&gt;&quot;DataSharingConfig&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;EnableSyncData&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;AutoSnipe&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;DataServiceIdentification&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ca32d7dc-4443-4602-a568-2aa5887c8ba8 - this is the id you generate step 1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;DataRecieverURL&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ws://necrosocket.herokuapp.com/socket.io/?EIO=3&amp;amp;transport=websocket&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This manual snipe mode even works with autosnipe so that you can leave autosnipe TRUE or FALSE doesn’t matter. But you need turn on data sync EnableSyncData (set it to TRUE)&lt;/p&gt;
+
+&lt;p&gt;Step 3: Go to mypogosnipers.com, then go to setting change sniper mode to use build in sniper and use the UUID you generate and set in the data service Identification, save setting and you are all good&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://i.imgur.com/PAHeaHd.png&quot;&gt;Imgur&lt;/a&gt;
+&lt;img src=&quot;http://i.imgur.com/PAHeaHd.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Step 4 : Click on any pokemon to verify that is work, you will see a notification message when you click on pokemon and the console message in bot.
+&lt;img src=&quot;http://i.imgur.com/ik3AyGh.png&quot; alt=&quot;Imgur&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Step 5: Hunting as many as pokemon you want&lt;/p&gt;
+
+&lt;p&gt;Happy botting .. :)&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/config.json/2017/01/07/necrobot2-manual-snipe/&quot;&gt;Necrobot2 - Manual Snipe config&lt;/a&gt; was originally published by Necrobot2 Team at &lt;a href=&quot;http://localhost:4000&quot;&gt;NecroBot2&lt;/a&gt; on January 07, 2017.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Runing Necrobot2 with PF Hash service API]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/auth.json/2017/01/07/necrobot2-with-PF-hash-server/"/>
+  <id>http://localhost:4000/auth.json/2017/01/07/necrobot2-with-PF-hash-server</id>
+  <published>2017-01-07T08:30:00+00:00</published>
+  <updated>2017-01-07T08:30:00+00:00</updated>
+  <author>
+    <name>Necrobot2 Team</name>
+    <uri>http://localhost:4000</uri>
+    <email>Necrobot2Team@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#Auth,%20Hash,Starter%20Config" term="Auth, Hash,Starter Config" />
+  <content type="html">
+  
+    &lt;p&gt;Necrobot 2 release 1.0.0.34 and above now support to running with Pokefamer hash API&lt;/p&gt;
+
+&lt;p&gt;What is Pokefamer hash API? - please read here &lt;a href=&quot;https://talk.pogodev.org/d/51-api-hashing-service-by-pokefarmer&quot;&gt;https://talk.pogodev.org/d/51-api-hashing-service-by-pokefarmer&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Basically, API no longer open source and free, to use latest API you have to using Pokefamer service, Just need to buy a key from them and use it with Necrobot&lt;/p&gt;
+
+&lt;p&gt;What is RPM? RPM is request per minute, that is how many request that key allow your bot to make in a minutes, the lowest package is 5$ = 150 RPM that enough for 3+ instance of bot running at the same time.&lt;/p&gt;
+
+&lt;p&gt;How to buy it? Please by it from Pokefamer they provide link above&lt;/p&gt;
+
+&lt;p&gt;How to configure to use it?&lt;/p&gt;
+
+&lt;p&gt;If you are brand new user, at the very first time you run the bot, the form will display as you to choose API method you want to use.&lt;/p&gt;
+
+&lt;p&gt;Select Pogodev API option, then enter your API key that you got from email after purchase it&lt;/p&gt;
+
+&lt;p&gt;Necrobot also support legacy api - 0.45. use it at your own risk (this is free )&lt;/p&gt;
+
+&lt;p&gt;If you are existing necro user, you need to edit auth.json to add your key, look for the config below in you json.config&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;APIConfig&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;UsePogoDevAPI&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;AuthAPIKey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;xxxxxxxxxxxxxx&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;UseLegacyAPI&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,```&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Change it with your key then start bot&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/auth.json/2017/01/07/necrobot2-supported-api/&quot;&gt;Read More  -Necrobot2 supported API version &lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Happy botting&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/auth.json/2017/01/07/necrobot2-with-PF-hash-server/&quot;&gt;Runing Necrobot2 with PF Hash service API&lt;/a&gt; was originally published by Necrobot2 Team at &lt;a href=&quot;http://localhost:4000&quot;&gt;NecroBot2&lt;/a&gt; on January 07, 2017.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Basic transfer config]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/config.json/2017/01/07/necrobot2-basic-transfer-config/"/>
+  <id>http://localhost:4000/config.json/2017/01/07/necrobot2-basic-transfer-config</id>
+  <published>2017-01-07T08:30:00+00:00</published>
+  <updated>2017-01-07T08:30:00+00:00</updated>
+  <author>
+    <name>Necrobot2 Team</name>
+    <uri>http://localhost:4000</uri>
+    <email>Necrobot2Team@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#Transfer,Starter%20Config" term="Transfer,Starter Config" />
+  <content type="html">
+  
+    &lt;p&gt;Thought, Transfer is the most issue I saw on discord that people as question, complain, worries, and angry about. I would ask you read this basic transfer config before run the bot to avoid any accident transfer your bag&lt;/p&gt;
+
+&lt;h1 id=&quot;weak-transfer-pokemon&quot;&gt;Weak Transfer Pokemon&lt;/h1&gt;
+
+&lt;p&gt;Weak transfer pokemon is the mode that you tell bot to transfer all the pokemon that you don’t want to keep as you think they are weak for you. It mean  that all pokemon not in ‘PokemonsNotToTransfer’.&lt;/p&gt;
+
+&lt;p&gt;To avoid any accident, please careful when turn this option on because you may not add your pokemon to the list then they will be transfered with no way to get back. Default config only include few popular rare pokemon, it not include all rare pokemon so make sure you are setting up that list carefully.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt; 
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PokemonsNotToTransfer&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;venusaur&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;charizard&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;blastoise&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;muk&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;chansey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;gyarados&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;articuno&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;zapdos&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;moltres&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;mewtwo&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;mew&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;To turn on Weak Transfer mode,you only need to set them to true&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt; 
+ &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PokemonConfig&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;............&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;TransferWeakPokemon&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;........&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h1 id=&quot;transfer-duplication-mode&quot;&gt;Transfer duplication mode&lt;/h1&gt;
+&lt;p&gt;This is the powerful transfer mode with fully control on what pokemons you want to keep , I will have separate guide for advance using this mode, in this page I only give some basic config how to use this feature&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Turn on this mode&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt; 
+ &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PokemonConfig&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;............&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;TransferDuplicatePokemon&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;: true   // Turn on Duplicate pokemon transfer
+    &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;KeepMinCp&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;: 2500,                  // Transfer all pokemon &amp;lt; 2500cp
+    &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;KeepMinIvPercentage&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;: 100.0,       //Transfer all pokemon &amp;lt; 100% IV
+    &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;KeepMinLvl&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;: 35,
+    &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;KeepMinOperator&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;: &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;or&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;,            //The logic check to combile with CP &amp;amp; IV
+    &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;UseKeepMinLvl&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;: false,             //Use level transfer 
+    &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;PrioritizeIvOverCp&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;: true,         //Tell bot that IV or CP is important to select pokemon to keep
+    &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;KeepMinDuplicatePokemon&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;       &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//Number&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;duplication&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;pokemon&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;you&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;want&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;keep&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Lets discuss about these parametters, they are global config apply for every pokemon in your bad, if you not overwrite by individual config. Even keep pokemon condition not meet but bot stil keep  number of pokemon &amp;lt;= KeepMinDuplicatePokemon. for example you setup as above , but you only has 1 Snorlax 50% IV, that snorlax still being kept in your bag, but if you have another snorlax 80%IV, the 50 % IV will be transfer and bot keep the 80% one (Note IV or CP depend on PrioritizeIvOverCp)&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Note: Transfer duplication only transfer the pokemon NOT in the list PokemonsNotToTransfer&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;how-i-specific-transfer-setting-for-specific-pokemon&quot;&gt;How I specific transfer setting for specific pokemon&lt;/h1&gt;
+
+&lt;p&gt;Okay, above is global config which will apply for every pokemon, But you have some pokemon that you never has 100% IV but you want to keep 5 of them for example Dragonite, you want to keep all dragonite &amp;gt; 80%IV, then in this case you need overwrite global setting by invidiual transfer as below&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt; 
+
+
+ &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PokemonsTransferFilter&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Dragonite&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;KeepMinCp&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;KeepMinIvPercentage&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;100.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;KeepMinLvl&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;UseKeepMinLvl&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;KeepMinOperator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;or&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;important&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;logic&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;or&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;here&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;keep&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;more&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;pokemon&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;you&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;want&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;KeepMinDuplicatePokemon&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Moves&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;DeprecatedMoves&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;MovesOperator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;and&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;CatchOnlyPokemonMeetTransferCriteria&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.....................&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Of invidual pokemon, you can specify moves you don’t want too, since if 100% IV but they have crab move, we don’t want to keep&lt;/p&gt;
+
+&lt;h1 id=&quot;what-is-transfer-on-capture&quot;&gt;What is transfer on capture&lt;/h1&gt;
+
+&lt;p&gt;Like you play pokemon go official, everytime you catch pokemon the info screen appear and the transfer option there, you can tap on that to transfer pokemon. So turn that to On, it mean you want bot do do like this.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt; 
+
+ &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PokemonConfig&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+   &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;TransferDuplicatePokemonOnCapture&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.....................&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Are you sure it work? why I turn it on and my pokemon still not transfer, I thought it broken?,…. whatever come to your mind,hold it off for a sec and read the Bulk transfer section below&lt;/p&gt;
+
+&lt;h1 id=&quot;bulk-transfer-mode&quot;&gt;Bulk Transfer mode&lt;/h1&gt;
+
+&lt;p&gt;Bulk transfer is the mode that you tell the bot to transfer multiple pokemon at once instead  one by one. The benefit of that is save number of request and improve the perfomance of the bot a lot. Bulk transfer only apply for max 100 batch, so if you have more than 100 pkm to transfer, bot will perfomance multiple time to transfer all of them. so, what config parametter you need to change, see below&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt; 
+
+ &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PokemonConfig&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.......&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;UseBulkTransferPokemon&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//enable&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;function,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;BulkTransferStogareBuffer&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;BulkTransferSize&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.......&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;BulkTransferStogareBuffer&lt;/strong&gt; : That is the buffer for your bag, for example, your bag is 250, buffer = 3 mean that everytime you bad full to 250-3, bulk transfer will happen&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;BulkTransferSize&lt;/strong&gt; : As mentioned above, max 100 is number of pokemon in each transfer , you can set it to 20, so everytime you have 20 pokemon meet with transfer filter , the bulk transfer will happen.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Note: Bulk transfer mode change the rule to select pokemon for transfer, it just do batch instead of single, so nothing impact on transfer such as wrong logic when turn it on&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;If you setup your transfer properly then your bag never full . I will post advance config for transfer to completely avoid bag full later.&lt;/p&gt;
+
+&lt;h1 id=&quot;some-message-in-console-related-to-transfer&quot;&gt;Some message in console related to transfer&lt;/h1&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/config.json/2017/01/07/necrobot2-basic-transfer-config/&quot;&gt;Basic transfer config&lt;/a&gt; was originally published by Necrobot2 Team at &lt;a href=&quot;http://localhost:4000&quot;&gt;NecroBot2&lt;/a&gt; on January 07, 2017.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[How to config auto sniper with necrobot2]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/config.json/2017/01/07/how-to-config-auto-snipe/"/>
+  <id>http://localhost:4000/config.json/2017/01/07/how-to-config-auto-snipe</id>
+  <published>2017-01-07T08:30:00+00:00</published>
+  <updated>2017-01-07T08:30:00+00:00</updated>
+  <author>
+    <name>Necrobot2 Team</name>
+    <uri>http://localhost:4000</uri>
+    <email>Necrobot2Team@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#Snipe,AutoSnipe" term="Snipe,AutoSnipe" />
+  <content type="html">
+  
+    &lt;p&gt;Auto snipe is an interesting feature that necrobot ship with release but not turn on it by default. You need to turn it on to use, please follow below steps to get it up and running.&lt;/p&gt;
+
+&lt;p&gt;Search for “DataSharingConfig” in the config.json file or DataSharingConfig in excel tab if you run bot with excel config&lt;/p&gt;
+
+&lt;p&gt;EnableSyncData = true AutoSnipe = true&lt;/p&gt;
+
+&lt;p&gt;like this&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt; 
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;DataSharingConfig&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;EnableSyncData&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;AutoSnipe&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;DataRecieverURL&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ws://necrosocket.herokuapp.com/socket.io/?EIO=3&amp;amp;transport=websocket&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;You can set autosnipe IV filter at SnipeConfig section. this config will tell the bot that you want auto snipe to catch all pokemon has IV &amp;gt;= config value&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt; 
+
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;SnipeConfig&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;UseSnipeLocationServer&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;SnipeLocationServer&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;localhost&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;SnipeLocationServerPort&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16969&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;GetSniperInfoFromPokezz&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;GetOnlyVerifiedSniperInfoFromPokezz&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;GetSniperInfoFromPokeSnipers&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;GetSniperInfoFromPokeWatchers&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;GetSniperInfoFromSkiplagged&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;MinPokeballsToSnipe&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;MinPokeballsWhileSnipe&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;MinDelayBetweenSnipes&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;60000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;SnipingScanOffset&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.005&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;SnipeAtPokestops&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;SnipeIgnoreUnknownIv&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;UseTransferIvForSnipe&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;SnipePokemonNotInPokedex&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;UseSnipeLimit&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;SnipeRestSeconds&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;600&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;SnipeCountLimit&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;39&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;ActivateMSniper&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;MinIVForAutoSnipe&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;97&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;===&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;here.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;don't&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;too&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;low&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;because&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;bot&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;will&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;snipe&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;the&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;and&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;ball&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;fast&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;You also able to overwrite this minIV by  setup invidiual pokemon snipe filter. For example, you want to snipe all dratini for candy, or snipe Pidgey for evolve&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt; 
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;SnipePokemonFilter&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Lapras&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;SnipeIV&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Moves&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Dragonite&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;EnableSnipe&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;dont&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;mind&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;about&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;flag&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;added&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;support&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;excel&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;SnipeIV&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Moves&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Dratini&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;SnipeIV&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Moves&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Pidgey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;SnipeIV&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Moves&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;By default bot will snipe all pokemon IV&amp;gt;=97% and snolax, dragonite, lapras, dratini. However, auto snipe set to off by default to use it you have to turn it on as above.&lt;/p&gt;
+
+&lt;h1 id=&quot;my-bot-sniper-too-much&quot;&gt;My BOT sniper too much?&lt;/h1&gt;
+&lt;p&gt;After you turn on autosnipe, bot likely to catch lot of high snipe pokemon by IV, to avoid and configure bot to autosnipe the pokemon you want, please see the config below for you reference&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Method 1&lt;/em&gt;. Set AutoSnipeMinIV to 101 - Then bot won’t autosnipe any pokemon, you need to overwrite pokemon individual snipe filter . For example, Only want to snipe any Lapras and 100%IV Dragonite and exclude all others pokemon, below is my config&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt; 
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;MinIVForAutoSnipe&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;101&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt; 
+ &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Lapras&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;SnipeIV&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Moves&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Operator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;or&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;VerifiedOnly&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Dragonite&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;SnipeIV&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Moves&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Operator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;or&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;VerifiedOnly&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;em&gt;Method 2&lt;/em&gt; : Autosnipe all pokemon then exclude those pokemon you don’t want snipe, see config below . In this case I want to snipe all 100% pokemon and except some crabby pokemon like zubat, pidgey.&lt;/p&gt;
+
+&lt;p&gt;Please note that this config only work from 1.0.0.47&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt; 
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;MinIVForAutoSnipe&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Then in snipe individual filter&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt; 
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Pidgey&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;SnipeIV&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;101&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Moves&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Operator&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;or&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;VerifiedOnly&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Zubat&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;SnipeIV&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;101&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Moves&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Operator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;or&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;VerifiedOnly&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Note: snipe.necrobot2.com recently update with crowndedsource then some data are faked, but in most case they are work.&lt;/p&gt;
+
+&lt;p&gt;Happy Bottin
+Then in snipe individual filter&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt; 
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Pidgey&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;SnipeIV&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;101&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Moves&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Operator&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;or&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;VerifiedOnly&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Zubat&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;SnipeIV&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;101&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Moves&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Operator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;or&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;VerifiedOnly&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Note: snipe.necrobot2.com recently update with crowndedsource then some data are faked, but in most case they are work.&lt;/p&gt;
+
+&lt;p&gt;.. :)
+ Then in snipe individual filter&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt; 
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Pidgey&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;SnipeIV&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;101&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Moves&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Operator&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;or&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;VerifiedOnly&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Zubat&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;SnipeIV&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;101&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Moves&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Operator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;or&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;VerifiedOnly&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Note: snipe.necrobot2.com recently update with crowndedsource then some data are faked, but in most case they are work.&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/config.json/2017/01/07/how-to-config-auto-snipe/&quot;&gt;How to config auto sniper with necrobot2&lt;/a&gt; was originally published by Necrobot2 Team at &lt;a href=&quot;http://localhost:4000&quot;&gt;NecroBot2&lt;/a&gt; on January 07, 2017.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[How to config multiple account]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/auth.json/2017/01/07/multi-account-config/"/>
+  <id>http://localhost:4000/auth.json/2017/01/07/multi-account-config</id>
+  <published>2017-01-07T01:30:00+00:00</published>
+  <updated>2017-01-07T01:30:00+00:00</updated>
+  <author>
+    <name>Necrobot2 Team</name>
+    <uri>http://localhost:4000</uri>
+    <email>Necrobot2Team@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#config,%20multi%20account;switches" term="config, multi account;switches" />
+  <content type="html">
+  
+    &lt;p&gt;If you have high EXP/H bot config then bot will reach to 24h limti very soon, with out Multi account config bot will pause or exit after hit that limit. Multiple account was design to keep bot run 247 and level up as many as account per bot since we can run limited instance on same IP address.&lt;/p&gt;
+
+&lt;p&gt;Just few thing need to config to bring this feature to work, please follow below step&lt;/p&gt;
+
+&lt;h2 id=&quot;allow-bot-multiple-mode-and-add-bot&quot;&gt;Allow bot multiple mode and add bot&lt;/h2&gt;
+&lt;p&gt;You need to do this in auth.config as below&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;s2&quot;&gt;&quot;AllowMultipleBot&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;turn&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Bots&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;AuthType&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ptc&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;GoogleUsername&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;GooglePassword&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;PtcUsername&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;xxxxx&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;PtcPassword&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;123456&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;AuthType&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ptc&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;GoogleUsername&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;GooglePassword&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;PtcUsername&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;yyyyy&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;PtcPassword&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;123456&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Note: Auth.json change require bot restart&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Next steps, you need to config to tell your bot when need to change account, by default the config quite good already, but you can customize them as you wish. The need to be done in config.json&lt;/p&gt;
+
+&lt;h2 id=&quot;config-the-logic-for-bot-switches&quot;&gt;Config the logic for bot switches&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;MultipleBotConfig&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;RuntimeSwitch&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;OnRarePokemon&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;MinIVToSwitch&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;99.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;EXPSwitch&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;PokestopSwitch&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;PokemonSwitch&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;PokemonPerHourSwitch&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;StartFromDefaultLocation&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;PokestopSoftbanCount&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;DisplayList&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;SelectAccountOnStartUp&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;CatchFleeCount&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;SwitchOnCatchLimit&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;SwitchOnPokestopLimit&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;EXPSwitch&lt;/strong&gt; : When bot colect this amount of EXP, bot will trigger switch to change to next account.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;RuntimeSwitch&lt;/strong&gt; : After bot ran for x minutes, bot will trigger switch to change to next account.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;OnRarePokemon&lt;/strong&gt; : Bot will trigger switches after caught or encountered good pokemon that you define in MinIVToSwitch or in the filter below&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;s2&quot;&gt;&quot;BotSwitchPokemonFilters&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Dragonite&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;IV&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;switch&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;when&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;or&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;encountered&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;dragonite&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;10%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;iV&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;RemainTimes&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//not&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Operator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;or&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;LV&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;nto&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;implemented,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;place&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;holder&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;only&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Moves&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//not&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;implemented&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;place&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;holder&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;only&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Hitmonchan&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;IV&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;RemainTimes&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Operator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;or&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;LV&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Moves&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Note: Per pokemon config will overwrite global value of MinIVToSwitch&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Happy botting .. :)&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/auth.json/2017/01/07/multi-account-config/&quot;&gt;How to config multiple account&lt;/a&gt; was originally published by Necrobot2 Team at &lt;a href=&quot;http://localhost:4000&quot;&gt;NecroBot2&lt;/a&gt; on January 07, 2017.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Notification config]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/config.json/2017/01/07/notification-config/"/>
+  <id>http://localhost:4000/config.json/2017/01/07/notification-config</id>
+  <published>2017-01-07T00:30:00+00:00</published>
+  <updated>2017-01-07T00:30:00+00:00</updated>
+  <author>
+    <name>Necrobot2 Team</name>
+    <uri>http://localhost:4000</uri>
+    <email>Necrobot2Team@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#notification" term="notification" />
+  <content type="html">
+  
+    &lt;p&gt;Necrobot2 support notificaiton in some when there important event happen and required your attention, just as captcha not been resolved, account limit reached, account banned….&lt;/p&gt;
+
+&lt;p&gt;Please change below config in config.json to get Notificaiton work with your bot&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;NotificationConfig&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;EnablePushBulletNotification&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; 
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;EnableEmailNotification&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;PushBulletApiKey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;xxxx&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;GmailUsername&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;xxx&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;GmailPassword&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;@xxx$&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Recipients&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+  &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Recipients&lt;/em&gt; : Put your email address you want to recieve notification&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;EnablePushBulletNotification&lt;/em&gt; : Allow bot send push notification to your phone by using [Push Bullet] (https://www.pushbullet.com/) service&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;PushBulletApiKey&lt;/em&gt; : the Push bullet API key you get from Pushbuttle.com , note free API key only has 500 push a month, after you use all those limit, you won’t be able to recieve notificaiton until next month.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;GmailUsername&lt;/em&gt;  and *GmailPassword” : Set your personal email in, bot will use this credential to send email to your Recipients&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Cheers&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/config.json/2017/01/07/notification-config/&quot;&gt;Notification config&lt;/a&gt; was originally published by Necrobot2 Team at &lt;a href=&quot;http://localhost:4000&quot;&gt;NecroBot2&lt;/a&gt; on January 07, 2017.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Official launch Necrobot2 website]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/announcement/2017/01/07/official-website-necrobot2/"/>
+  <id>http://localhost:4000/announcement/2017/01/07/official-website-necrobot2</id>
+  <published>2017-01-07T00:30:00+00:00</published>
+  <updated>2017-01-07T00:30:00+00:00</updated>
+  <author>
+    <name>Necrobot2 Team</name>
+    <uri>http://localhost:4000</uri>
+    <email>Necrobot2Team@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#website" term="website" />
+  <content type="html">
+  
+    &lt;p&gt;I am happy to announce that we are in the launched a new document system and public channel to communicate with our Necrobot community, this website will be the main channel for us to delivery all news and release to public. We also update site with config trick and telk you the better way to deal with your issue like Bag full, to many 100 IV, or reduce ban risk.&lt;/p&gt;
+
+&lt;p&gt;Happy botting .. :)&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/announcement/2017/01/07/official-website-necrobot2/&quot;&gt;Official launch Necrobot2 website&lt;/a&gt; was originally published by Necrobot2 Team at &lt;a href=&quot;http://localhost:4000&quot;&gt;NecroBot2&lt;/a&gt; on January 07, 2017.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Release []]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/releases/2017/01/01/release-template/"/>
+  <id>http://localhost:4000/releases/2017/01/01/release-template</id>
+  <published>2017-01-01T00:00:00+00:00</published>
+  <updated>2017-01-01T00:00:00+00:00</updated>
+  <author>
+    <name>Necrobot2 Team</name>
+    <uri>http://localhost:4000</uri>
+    <email>Necrobot2Team@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#Release" term="Release" />
+  <content type="html">
+  
+    &lt;h1 id=&quot;realease-version--100123&quot;&gt;REALEASE VERSION : 1.0.0.123&lt;/h1&gt;
+
+&lt;h1 id=&quot;changelogs&quot;&gt;Changelogs&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;item 1&lt;/li&gt;
+  &lt;li&gt;item 2&lt;/li&gt;
+  &lt;li&gt;item 3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;#Download
+* &lt;a href=&quot;Necrobot.cli.zip&quot;&gt;http://link1&lt;/a&gt;
+* &lt;a href=&quot;Necrobot.cli.zip&quot;&gt;http://link1&lt;/a&gt;
+* &lt;a href=&quot;Necrobot.cli.zip&quot;&gt;http://link1&lt;/a&gt;&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/releases/2017/01/01/release-template/&quot;&gt;Release []&lt;/a&gt; was originally published by Necrobot2 Team at &lt;a href=&quot;http://localhost:4000&quot;&gt;NecroBot2&lt;/a&gt; on January 01, 2017.&lt;/p&gt;</content>
+</entry>
+
+</feed>

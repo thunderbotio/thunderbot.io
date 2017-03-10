@@ -1,0 +1,103 @@
+callback([
+
+  {
+    "text": "Release []",
+    "href": "http://localhost:4000/releases/2017/01/01/release-template/"
+  } ,
+
+  {
+    "text": "Official launch Necrobot2 website",
+    "href": "http://localhost:4000/announcement/2017/01/07/official-website-necrobot2/"
+  } ,
+
+  {
+    "text": "Notification config",
+    "href": "http://localhost:4000/config.json/2017/01/07/notification-config/"
+  } ,
+
+  {
+    "text": "How to config multiple account",
+    "href": "http://localhost:4000/auth.json/2017/01/07/multi-account-config/"
+  } ,
+
+  {
+    "text": "How to config auto sniper with necrobot2",
+    "href": "http://localhost:4000/config.json/2017/01/07/how-to-config-auto-snipe/"
+  } ,
+
+  {
+    "text": "Basic transfer config",
+    "href": "http://localhost:4000/config.json/2017/01/07/necrobot2-basic-transfer-config/"
+  } ,
+
+  {
+    "text": "Runing Necrobot2 with PF Hash service API",
+    "href": "http://localhost:4000/auth.json/2017/01/07/necrobot2-with-PF-hash-server/"
+  } ,
+
+  {
+    "text": "Necrobot2 - Manual Snipe config",
+    "href": "http://localhost:4000/config.json/2017/01/07/necrobot2-manual-snipe/"
+  } ,
+
+  {
+    "text": "Necrobot2 supported API version",
+    "href": "http://localhost:4000/auth.json/2017/01/07/necrobot2-supported-api/"
+  } ,
+
+  {
+    "text": "Captcha Resolving config",
+    "href": "http://localhost:4000/config.json/2017/01/07/Captcha-resolving-config/"
+  } ,
+
+  {
+    "text": "Telegram configuration ",
+    "href": "http://localhost:4000/config.json/2017/01/11/telegram-service-configuration-Copy/"
+  } ,
+
+  {
+    "text": "Necrobot2 GUI release",
+    "href": "http://localhost:4000/announcement/2017/01/11/first-time-gui-release/"
+  } ,
+
+  {
+    "text": "How the limit reset works?",
+    "href": "http://localhost:4000/announcement/2017/01/11/how-catch-pokestop-limit-reset-work/"
+  } ,
+
+  {
+    "text": "Contribute to help Necrobot2 grow",
+    "href": "http://localhost:4000/announcement/2017/01/11/contribute-to-grown-necrobot2/"
+  } ,
+
+  {
+    "text": "Config multile account - extra (contribute community)",
+    "href": "http://localhost:4000/auth.json/2017/01/23/multi-account-config-extra/"
+  } ,
+
+  {
+    "text": "Auto rename config guide",
+    "href": "http://localhost:4000/config.json/2017/02/03/auto-rename-syntax-config/"
+  } ,
+
+  {
+    "text": "Group filter settings",
+    "href": "http://localhost:4000/config.json/2017/02/22/group-filter-setting/"
+  } ,
+
+  {
+    "text": "Berries config",
+    "href": "http://localhost:4000/config.json/2017/02/22/config-berries/"
+  } ,
+
+  {
+    "text": "Which package should I download?",
+    "href": "http://localhost:4000/config.json/2017/02/22/what-should-i-download/"
+  } ,
+
+  {
+    "text": "Human-like configuration",
+    "href": "http://localhost:4000/config.json/2017/02/25/human-like-config/"
+  } 
+
+])
