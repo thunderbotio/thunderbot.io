@@ -20,7 +20,7 @@ If you are not developer of you don't have any experience with development work,
 
 - To help with document, if you know about github then you can use github fork & pull request model to make new document or modified my existing document to make sure it is clear and easy to understanding for all people read it. 
 
-Our document repo here - https://github.com/Necrobot-Private/necrobot2.com
+Our document repo here - https://github.com/Necrobot-Private/thunderbot.com
 
 Please read this great article for fork and make change file with git [https://guides.github.com/activities/forking/](https://guides.github.com/activities/forking/)
 

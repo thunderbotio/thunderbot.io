@@ -11,7 +11,7 @@ tags:
 
 Since 0.49 API forced to update, PogoDev and RE won't release public API any more, It mean that we won't have a latest API to run bot, However, Pogodev & Pokefamer came with paid solution to access their service which using lastest api version to hashing data before send back to Niantic.
 
-*What API available in necrobot2
+*What API available in thunderbot
 Necrobot allow you choose Legacy API 0.45 or Using PF hash server, the only thing you need do do is update APIconfig section in auth.json as below
 
 {% highlight json%}  

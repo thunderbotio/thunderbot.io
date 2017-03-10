@@ -1,7 +1,7 @@
 ---
 author: samuraitruong
 layout: post
-title: "How to config auto sniper with necrobot2"
+title: "How to config auto sniper with thunderbot"
 date: 2017-01-07 8:30
 comments: true
 category: Config.json
@@ -9,7 +9,7 @@ tags:
 - Snipe,AutoSnipe
 ---
 
-Auto snipe is an interesting feature that necrobot ship with release but not turn on it by default. You need to turn it on to use, please follow below steps to get it up and running.
+Auto snipe is an interesting feature that thunderbot ship with release but not turn on it by default. You need to turn it on to use, please follow below steps to get it up and running.
 
 Search for "DataSharingConfig" in the config.json file or DataSharingConfig in excel tab if you run bot with excel config
 
@@ -134,7 +134,7 @@ Then in snipe individual filter
       "VerifiedOnly": true
     }
     {% endhighlight %}
-Note: snipe.necrobot2.com recently update with crowndedsource then some data are faked, but in most case they are work.
+Note: snipe.thunderbot.com recently update with crowndedsource then some data are faked, but in most case they are work.
 
 
 
@@ -155,7 +155,7 @@ Then in snipe individual filter
       "VerifiedOnly": true
     }
     {% endhighlight %}
-Note: snipe.necrobot2.com recently update with crowndedsource then some data are faked, but in most case they are work.
+Note: snipe.thunderbot.com recently update with crowndedsource then some data are faked, but in most case they are work.
 
  .. :)
  Then in snipe individual filter
@@ -174,6 +174,6 @@ Note: snipe.necrobot2.com recently update with crowndedsource then some data are
       "VerifiedOnly": true
     }
     {% endhighlight %}
-Note: snipe.necrobot2.com recently update with crowndedsource then some data are faked, but in most case they are work.
+Note: snipe.thunderbot.com recently update with crowndedsource then some data are faked, but in most case they are work.
 
 

@@ -9,7 +9,7 @@ tags:
 - Snipe,Upgrade,Config
 ---
 
-If you are familiar with necrobot setting/filter/config system you will see if very powerful and flexiable. however, for newbie , most of them strugge with the huge json file. The new requirement had been implmenet to clean up and make setting shorter and easier to read and config. What what I call group filter setting.
+If you are familiar with thunderbot setting/filter/config system you will see if very powerful and flexiable. however, for newbie , most of them strugge with the huge json file. The new requirement had been implmenet to clean up and make setting shorter and easier to read and config. What what I call group filter setting.
 
 As you all know that you can put 720 different filter for control your bot but it seem overkill because most we should partition pokemons to a group. this change allow you do that
 

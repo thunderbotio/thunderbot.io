@@ -9,7 +9,7 @@ tags:
 - Starter, guides
 ---
 
-There few packages of necrobot in download page sometime make people confused,  Each package does it function . please check quick tip below to select proper package suite to your need.
+There few packages of thunderbot in download page sometime make people confused,  Each package does it function . please check quick tip below to select proper package suite to your need.
 
 Download at [https://github.com/Necrobot-Private/NecroBot/releases/]{https://github.com/Necrobot-Private/NecroBot/releases/}
 

@@ -13,7 +13,7 @@ Necrobot version > 1.0.0.30 support manual snipe , which is suite for everyone w
 
 # How manual snipe work
 
-Your bot is running , you will visit website [snipe.necrobot2.com]('http://snipe.necrobot2.com') and looking for good pokemon, if you want bot cach him just click on him, that's all. but before the magical happen, you need to do a very simple setup as below
+Your bot is running , you will visit website [snipe.thunderbot.com]('http://snipe.thunderbot.com') and looking for good pokemon, if you want bot cach him just click on him, that's all. but before the magical happen, you need to do a very simple setup as below
 
 Generate your unique ID, BOT & mypogosnipers.com will use this UUID to make a handshake, You can using 1 UUID share with all other instance of bot running (which is great , you click one and all your bot will catch him, nice isn't ). You can also share your UUID with your friend and snipe to gether , that is double cool
 

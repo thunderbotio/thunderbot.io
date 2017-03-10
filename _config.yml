@@ -1,28 +1,28 @@
 title:            NecroBot2
 description:      "The opensource c# pokemon go bot"
-logo:             necrobot2.jpg
-disqus_shortname: necrobot2com
+logo:             thunderbot.jpg
+disqus_shortname: thunderbotcom
 share:            true
 dropcap:	   true
 # Change url to your domain. Leave localhost server or blank when working locally.
 # or use the hint from http://jekyllrb.com/docs/github-pages/ to keep this the same 
 # whether working locally or remotely. Start Jekyll with: jekyll serve --baseurl ''
-url:        	 http://necrobot2.com
+url:        	 http://thunderbot.com
 
 # Owner/author information
 owner:
-  name:           Necrobot2 Team
-  avatar:         Necrobot2.jpg
-  email:          Necrobot2Team@gmail.com
+  name:           ThunderBotIO
+  avatar:         thunderbot.jpg
+  email:          admin@thunderbot.io
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
   description:    Programming is 1% knowledge, 2% ability and 97% getting the ability to work with the knowledge :)
   # Social networking links used in footer. Update and remove as you like.
-  twitter:        Necrobot2Team
-  facebook:       Necrobot2Team
-  github:         Necrobot2Team    
-  instagram:      Necrobot2Team
+  twitter:        ThunderbotTeam
+  facebook:       ThunderbotTeam
+  github:         ThunderbotTeam    
+  instagram:      ThunderbotTeam
   # For Google Authorship https://plus.google.com/authorship
-  google_plus:    https://plus.google.com/u/0/+Necrobot2Team
+  google_plus:    https://plus.google.com/u/0/+ThunderbotIO
 
 # Analytics and webmaster tools stuff goes here
 google_analytics:   UA-46791108-110
@@ -38,15 +38,12 @@ links:
     external: false
     icon: home
   - title: Snipe
-    url: http://snipe.necrobot2.com
+    url: http://snipe.thunderbot.com
     external: true
-#  - title: MSniper
-#    url: https://www.msniper.com
-#    external: true  
   - title: Documents
     url: /documents
   - title: Downloads
-    url: https://github.com/Necrobot-Private/NecroBot/releases/latest
+    url: http://alturl.com/5kcig
     external: true
   - title: About
     url: /about
