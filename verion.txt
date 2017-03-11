@@ -1,3 +1,0 @@
-2.0.0.0
-Thunderbot.exe,link to cip
-Thunderbot.WIN.exe, link to win
