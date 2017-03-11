@@ -12,8 +12,9 @@ tags:
 # REALEASE VERSION : 2.0.0.5
 
 # Changelogs
-- 
-- 
+- Allow add account from GUI
+- Allow add multiple/bulk account from UI
+- All config allow control delay for API request.
 
 # Downloads
 - [ThunderBOT Console CLI](/releases/2.0.0.5/ThunderBOT.CLI.zip)
