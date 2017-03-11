@@ -1,5 +1,5 @@
 ---
-author: samuraitruong
+author: thunderbotio
 layout: post
 title: "Release [{Version}]"
 date: 2017-01-01 00:00
