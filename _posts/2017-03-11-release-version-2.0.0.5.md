@@ -1,5 +1,5 @@
 ---
-author: samuraitruong
+author: thunderbotio
 layout: post
 title: "Release [2.0.0.5]"
 date: 2017-03-11 12:55
