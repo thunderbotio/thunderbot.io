@@ -439,8 +439,8 @@ html, body, .notepad-post-container, .notepad-post-header {
     @media only screen and (min-width: 40.063em) {
       .notepad-page-title .notepad-post-meta-simple,
       .notepad-post-title-simple .notepad-post-meta-simple {
-        padding-top: 6.25rem;
-        padding-bottom: 3.75rem; } }
+        padding-top: 2.25rem;
+        padding-bottom: 1.75rem; } }
     @media only screen and (min-width: 70em) {
       .notepad-page-title .notepad-post-meta-simple,
       .notepad-post-title-simple .notepad-post-meta-simple {
