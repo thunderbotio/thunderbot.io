@@ -2,7 +2,7 @@
 author: thunderbotio
 layout: post
 title: "Release [2.0.0.6]"
-date: 2017-03-12 07:37
+date: 2017-03-12 07:38
 comments: true
 category: Releases
 tags:
