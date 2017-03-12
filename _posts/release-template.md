@@ -11,10 +11,10 @@ tags:
 
 # REALEASE VERSION : {Version}
 
-# Changelogs
+## Changelogs
 {ChangeLogsText}
 
-# Downloads
+## Downloads
 {Downloads:- [{Key}]({Value})|
 }
 
@@ -22,7 +22,8 @@ Alternately, you can download release at - [http://alturl.com/5kcig](Thunderbot 
 
 Please help use gain more stogare space by register an dropbox account with this referal link [https://db.tt/W7CWhTvf](https://db.tt/W7CWhTvf)
 
-# Supports
+## Supports
 
 Please join us on [https://discord.gg/7FWyWVp ](Discord - https://discord.gg/7FWyWVp )
-)
+
+Note: Thunderbot is forked and keep developing version of Necrobot2 - The forked version is 1.0.0.133
