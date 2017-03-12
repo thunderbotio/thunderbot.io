@@ -12,8 +12,11 @@ tags:
 # REALEASE VERSION : 2.0.0.6
 
 # Changelogs
-- 
-- 
+- Allow import list account from csv file - 
+  csv file must follow structure : '''ptc;acc;password```
+  
+- Minor log /text fix
+
 
 # Downloads
 - [ThunderBOT Console CLI](/releases/2.0.0.6/ThunderBOT.CLI.zip)
