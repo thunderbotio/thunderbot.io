@@ -1,5 +1,5 @@
 ---
-author: samuraitruong
+author: ThunderbotIO
 layout: post
 title: "Official launch ThunderbotIO website"
 date: 2017-01-07 0:30
@@ -9,8 +9,7 @@ tags:
 - website
 ---
 
-I am happy to announce that we are in the launched a new document system and public channel to communicate with our Thunderbot community, this website will be the main channel for us to delivery all news and release to public. We also update site with config trick and telk you the better way to deal with your issue like Bag full, to many 100 IV, or reduce ban risk.
-
+Thunderbot.IO is the public website representative for Thunderbot which is Forked version from Necrobot V1.0.0.133 and keep maintainand adding new awesome features. All existing features will work as is. The source code is nolonger visible to public, you still ble to contribute translation for project throught thunderbotio/thunderbot_public projects.
 
 
 Happy botting .. :)
