@@ -9,7 +9,7 @@ tags:
 - website
 ---
 
-Thunderbot.IO is the public website representative for Thunderbot which is Forked version from Necrobot V1.0.0.133 and keep maintainand adding new awesome features. All existing features will work as is. The source code is nolonger visible to public, you still ble to contribute translation for project throught thunderbotio/thunderbot_public projects.
+Thunderbot.IO is the public website representative for Thunderbot which is Forked version from Necrobot V1.0.0.133 and keep maintain, adding new awesome features. All existing features will work as is. The source code is nolonger visible to public, you still ble to contribute translation for project throught thunderbotio/thunderbot_public projects.
 
 
 Happy botting .. :)
