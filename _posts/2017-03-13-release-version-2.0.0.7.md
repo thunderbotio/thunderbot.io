@@ -12,8 +12,8 @@ tags:
 # REALEASE VERSION : 2.0.0.7
 
 ## Changelogs
-- 
-- 
+- Add gym interactive on win GUI
+ <img src="http://i.imgur.com/gQ1zIM4.png"/>
 
 ## Downloads
 - [ThunderBOT Console CLI](/releases/2.0.0.7/ThunderBOT.CLI.zip)
