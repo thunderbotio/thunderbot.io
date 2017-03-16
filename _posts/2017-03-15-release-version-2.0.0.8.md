@@ -12,8 +12,10 @@ tags:
 # REALEASE VERSION : 2.0.0.8
 
 ## Changelogs
-- 
-- 
+- Add max level snipe, max IV snipe to alow snipe low level, low IV pokemon for bupplestrap
+- Added keep max level, keep max IV to keep pokemon whichs good for bupplestrap gym
+- minor fixes, misc enhancement
+
 
 ## Downloads
 - [ThunderBOT Console CLI](/releases/2.0.0.8/ThunderBOT.CLI.zip)
