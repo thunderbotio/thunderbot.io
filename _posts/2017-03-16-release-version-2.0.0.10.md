@@ -12,8 +12,9 @@ tags:
 # REALEASE VERSION : 2.0.0.10
 
 ## Changelogs
-- 
-- 
+- Patch API with new API change from Pokefamer - That will fix Hash server not stabble
+- Update logo official
+- Minor multiple keys enhancement
 
 ## Downloads
 - [ThunderBOT Console CLI](/releases/2.0.0.10/ThunderBOT.CLI.zip)
