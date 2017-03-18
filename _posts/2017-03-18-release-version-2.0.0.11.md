@@ -12,8 +12,8 @@ tags:
 # REALEASE VERSION : 2.0.0.11
 
 ## Changelogs
-- 
-- 
+- Allow run bot with account load from csv file
+- Count catchflee pokemon into catch count
 
 ## Downloads
 - [ThunderBOT Console CLI](/releases/2.0.0.11/ThunderBOT.CLI.zip)
