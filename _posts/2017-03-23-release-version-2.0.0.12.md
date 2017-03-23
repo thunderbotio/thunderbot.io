@@ -1,5 +1,5 @@
 ---
-author: thunderbotio
+author: thunderbotio 
 layout: post
 title: "Release [2.0.0.12]"
 date: 2017-03-23 12:30
@@ -12,8 +12,10 @@ tags:
 # REALEASE VERSION : 2.0.0.12
 
 ## Changelogs
-- 
-- 
+- Tuning multiple hash key support, allow remove expired/error/forbidden key from the list and auth.json
+
+- Added ReverseIV in snipefilter. this was designed to improve snipe feature for candy, bot will snipe lower IV instead of higher IV. For example, we snipe pidgey for candy, but ATM bot ussually snipe 80% IV+ which make harder to catch. now bot will snipe 0% instead . make sure you turn this to True for candy snipe pokemons
+- update logo/text/minor fixes
 
 ## Downloads
 - [ThunderBOT Console CLI](/releases/2.0.0.12/ThunderBOT.CLI.zip)
