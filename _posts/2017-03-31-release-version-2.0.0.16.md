@@ -13,9 +13,9 @@ tags:
 
 ## Changelogs
 - Thunderbot manager beta release which allow you to control multiple CLI on same PC
--- switch account
--- manage offline bag/pokemon/item
--- View runtime statistic
+- switch account
+- manage offline bag/pokemon/item
+- View runtime statistic
 
 *Many more feature will comming*
 
