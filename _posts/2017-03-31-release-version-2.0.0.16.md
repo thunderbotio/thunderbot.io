@@ -12,8 +12,12 @@ tags:
 # REALEASE VERSION : 2.0.0.16
 
 ## Changelogs
-- 
-- 
+- Thunderbot manager beta release which allow you to control multiple CLI on same PC
+-- switch account
+-- manage offline bag/pokemon/item
+-- View runtime statistic
+
+*Many more feature will comming*
 
 ## Downloads
 - [ThunderBOT Console CLI](/releases/2.0.0.16/ThunderBOT.CLI.zip)
@@ -26,6 +30,6 @@ Please help use gain more stogare space by register an dropbox account with this
 
 ## Supports
 
-Please join us on [https://discord.gg/7FWyWVp ](Discord - https://discord.gg/7FWyWVp )
+Please join us on [https://discord.gg/HyEEAwc](Discord - https://discord.gg/HyEEAwc )
 
 Note: Thunderbot is forked and keep developing version of Necrobot2 - The forked version is 1.0.0.133
