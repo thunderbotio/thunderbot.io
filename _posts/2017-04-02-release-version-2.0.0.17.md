@@ -12,8 +12,8 @@ tags:
 # REALEASE VERSION : 2.0.0.17
 
 ## Changelogs
-- 
-- 
+- Support hash api 0.59.1 & upgrade protos to 0.59.1
+- Manager upgrade to handle auto detect process/support group by folder.
 
 ## Downloads
 - [ThunderBOT Console CLI](/releases/2.0.0.17/ThunderBOT.CLI.zip)
