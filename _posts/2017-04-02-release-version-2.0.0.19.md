@@ -12,8 +12,8 @@ tags:
 # REALEASE VERSION : 2.0.0.19
 
 ## Changelogs
-- 
-- 
+- fix bug not show title
+- do not need to re-login if hash data wrong
 
 ## Downloads
 - [ThunderBOT Console CLI](/releases/2.0.0.19/ThunderBOT.CLI.zip)
