@@ -22,6 +22,8 @@ Alternately, you can download release at - [http://alturl.com/5kcig](Thunderbot 
 
 Please help use gain more stogare space by register an dropbox account with this referal link [https://db.tt/W7CWhTvf](https://db.tt/W7CWhTvf)
 
+Or download from box.net [http://alturl.com/628uv](http://alturl.com/628uv)
+
 ## Supports
 
 Please join us on [https://discord.gg/HyEEAwc](Discord - https://discord.gg/HyEEAwc )
