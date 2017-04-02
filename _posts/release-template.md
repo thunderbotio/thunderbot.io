@@ -24,6 +24,6 @@ Please help use gain more stogare space by register an dropbox account with this
 
 ## Supports
 
-Please join us on [https://discord.gg/7FWyWVp ](Discord - https://discord.gg/7FWyWVp )
+Please join us on [https://discord.gg/HyEEAwc](Discord - https://discord.gg/HyEEAwc )
 
 Note: Thunderbot is forked and keep developing version of Necrobot2 - The forked version is 1.0.0.133
