@@ -1,2 +1,2 @@
 # thunderbot.io
-This is public website forthunderbot.io
+This is public website for thunderbot.io
